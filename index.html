@@ -60,7 +60,7 @@
     <header class="hero">
       <div class="container">
         <p class="cohort-label">Ruta de Formacion en Python · Colombia</p>
-        <h1>Empeza por la guia, <span>no por el repo</span></h1>
+        <h1><span id="tw-static"></span><span id="tw-dynamic" class="tw-yellow"></span><span class="tw-cursor">|</span></h1>
         <p class="hero-desc">
           Esta pagina mapea la ruta completa de Python: de los fundamentos visuales
           a la resolucion de problemas reales con archivos, automatizacion y proyectos
@@ -68,33 +68,60 @@
           es el hilo conductor entre todos ellos.
         </p>
       </div>
+      <div class="hero-stats"><div class="hero-stat"><span class="stat-num" data-target="6">0</span><span class="stat-label">Fases</span></div><div class="hero-stat"><span class="stat-num" data-target="98">0</span><span class="stat-label">Horas totales</span></div><div class="hero-stat"><span class="stat-num" data-target="70">0</span><span class="stat-label">Hitos</span></div></div>
     </header>
 
     <main class="container">
 
       <!-- PRINCIPIOS DE LA RUTA -->
-      <section id="principios">
+      <section id="principios" class="reveal">
         <h2>Principios de la Ruta</h2>
         <div class="principles-grid">
-          <div class="principle-card">
-            <h3>Aprender haciendo</h3>
-            <p>Proyectos desde el primer dia. La teoria nunca se dicta en bloques mayores a 25 minutos sin codigo de por medio.</p>
+          <div class="principle-card flip-card">
+            <div class="flip-inner">
+              <div class="flip-front">
+                <h3>Aprender haciendo</h3>
+                <p>Proyectos desde el primer dia. La teoria nunca se dicta en bloques mayores a 25 minutos sin codigo de por medio.</p>
+              </div>
+              <div class="flip-back"><pre class="flip-code">print("Hola")
+ejecutar()</pre></div>
+            </div>
           </div>
-          <div class="principle-card">
-            <h3>Intuicion primero</h3>
-            <p>Priorizar la intuicion antes que la teoria. Los conceptos se anclan en ejemplos visuales y cotidianos antes de formalizarse.</p>
+          <div class="principle-card flip-card">
+            <div class="flip-inner">
+              <div class="flip-front">
+                <h3>Intuicion primero</h3>
+                <p>Priorizar la intuicion antes que la teoria. Los conceptos se anclan en ejemplos visuales y cotidianos antes de formalizarse.</p>
+              </div>
+              <div class="flip-back"><pre class="flip-code">ver = lambda x: print(x)</pre></div>
+            </div>
           </div>
-          <div class="principle-card">
-            <h3>Sin sobre-ingenieria</h3>
-            <p>Evitar inicialmente bases de datos, desarrollo web, frameworks y arquitectura de software. Primero productividad real.</p>
+          <div class="principle-card flip-card">
+            <div class="flip-inner">
+              <div class="flip-front">
+                <h3>Sin sobre-ingenieria</h3>
+                <p>Evitar inicialmente bases de datos, desarrollo web, frameworks y arquitectura de software. Primero productividad real.</p>
+              </div>
+              <div class="flip-back"><pre class="flip-code">import this</pre></div>
+            </div>
           </div>
-          <div class="principle-card">
-            <h3>Para cualquier profesion</h3>
-            <p>Enfoque practico que permite a cualquier persona descubrir como Python puede aumentar su productividad, independientemente de su area.</p>
+          <div class="principle-card flip-card">
+            <div class="flip-inner">
+              <div class="flip-front">
+                <h3>Para cualquier profesion</h3>
+                <p>Enfoque practico que permite a cualquier persona descubrir como Python puede aumentar su productividad, independientemente de su area.</p>
+              </div>
+              <div class="flip-back"><pre class="flip-code">python archivo.py</pre></div>
+            </div>
           </div>
-          <div class="principle-card">
-            <h3>Ejemplos visuales</h3>
-            <p>Explicar conceptos con representaciones graficas y casos cotidianos. El error se ve, no solo se lee en una terminal.</p>
+          <div class="principle-card flip-card">
+            <div class="flip-inner">
+              <div class="flip-front">
+                <h3>Ejemplos visuales</h3>
+                <p>Explicar conceptos con representaciones graficas y casos cotidianos. El error se ve, no solo se lee en una terminal.</p>
+              </div>
+              <div class="flip-back"><pre class="flip-code">rect(10, 10, 80, 80)</pre></div>
+            </div>
           </div>
         </div>
         <div class="result-box">
@@ -106,13 +133,14 @@
       </section>
 
       <!-- RUTA SUGERIDA -->
-      <section id="ruta">
+      <section id="ruta" class="reveal">
         <h2>Ruta sugerida</h2>
         <p class="section-desc">
           La progresion de fondo es siempre la misma: de la logica visual a la
           automatizacion, pasando por fundamentos, estructuras de datos y proyectos reales.
           No se avanza entre fases si el cumplimiento de hitos es inferior al 80%.
         </p>
+        <div class="phase-pipeline"><div class="pipeline-track"></div><button class="pipe-node pipe-node--done" data-phase="1" title="Fase 1"><span>1</span></button><button class="pipe-node pipe-node--done" data-phase="2" title="Fase 2"><span>2</span></button><button class="pipe-node pipe-node--active" data-phase="3" title="Fase 3"><span>3</span></button><button class="pipe-node pipe-node--future" data-phase="4" title="Fase 4"><span>4</span></button><button class="pipe-node pipe-node--future" data-phase="5" title="Fase 5"><span>5</span></button><button class="pipe-node pipe-node--future" data-phase="6" title="Fase 6"><span>6</span></button></div>
         <ol class="phases">
           <li class="phase phase--done">
             <span class="phase-num">1</span>
@@ -174,7 +202,7 @@
       </section>
 
       <!-- FICHAS DE MODULOS -->
-      <section id="modulos">
+      <section id="modulos" class="reveal">
         <h2>Fichas de modulos</h2>
         <p class="section-desc">Cada fase tiene una ficha con los detalles de implementacion: objetivos, temas, logros medibles y proyectos de aplicacion.</p>
 
@@ -209,9 +237,15 @@
             </div>
 
             <h4>Temas y subtemas</h4>
+            <div class="tab-nav">
+              <button class="tab-btn is-active" data-tab="temas">Temas</button>
+              <button class="tab-btn" data-tab="proyectos">Proyectos</button>
+              <button class="tab-btn" data-tab="cronograma">Cronograma</button>
+            </div>
+            <div class="tab-panel is-active" data-tab="temas">
             <div class="topics">
               <div class="topic">
-                <div class="topic-header"><span class="topic-num">Tema 0</span><span class="topic-name">Preparacion del entorno</span><span class="topic-hours">2 h</span></div>
+                <div class="topic-header" aria-expanded="false"><span class="topic-num">Tema 0</span><span class="topic-name">Preparacion del entorno</span><span class="topic-hours">2 h</span></div>
                 <div class="topic-body">
                   <p>Instalacion y validacion del espacio de trabajo. Una configuracion erronea impide el progreso, por lo que se aborda como unidad critica con sus propios hitos de finalizacion.</p>
                   <ul>
@@ -224,7 +258,7 @@
                 </div>
               </div>
               <div class="topic">
-                <div class="topic-header"><span class="topic-num">Tema 1</span><span class="topic-name">Coordenadas y graficos</span><span class="topic-hours">8 h · 3T / 5P</span></div>
+                <div class="topic-header" aria-expanded="false"><span class="topic-num">Tema 1</span><span class="topic-name">Coordenadas y graficos</span><span class="topic-hours">8 h · 3T / 5P</span></div>
                 <div class="topic-body">
                   <p>El lienzo como sistema cartesiano. El origen esta en la esquina superior izquierda; el eje Y crece hacia abajo.</p>
                   <ul>
@@ -239,7 +273,7 @@
                 </div>
               </div>
               <div class="topic">
-                <div class="topic-header"><span class="topic-num">Tema 2</span><span class="topic-name">Condicionales if</span><span class="topic-hours">6 h · 2T / 4P</span></div>
+                <div class="topic-header" aria-expanded="false"><span class="topic-num">Tema 2</span><span class="topic-name">Condicionales if</span><span class="topic-hours">6 h · 2T / 4P</span></div>
                 <div class="topic-body">
                   <p>La evaluacion booleana se materializa en cambios visuales en el lienzo.</p>
                   <ul>
@@ -253,7 +287,7 @@
                 </div>
               </div>
               <div class="topic">
-                <div class="topic-header"><span class="topic-num">Tema 3</span><span class="topic-name">Bucles for y while</span><span class="topic-hours">9 h · 3T / 6P</span></div>
+                <div class="topic-header" aria-expanded="false"><span class="topic-num">Tema 3</span><span class="topic-name">Bucles for y while</span><span class="topic-hours">9 h · 3T / 6P</span></div>
                 <div class="topic-body">
                   <p>La iteracion como motor de complejidad: desde mallas geometricas hasta mosaicos generativos.</p>
                   <ul>
@@ -268,7 +302,7 @@
                 </div>
               </div>
               <div class="topic">
-                <div class="topic-header"><span class="topic-num">Tema 4</span><span class="topic-name">Funciones y reutilizacion</span><span class="topic-hours">8 h · 3T / 5P</span></div>
+                <div class="topic-header" aria-expanded="false"><span class="topic-num">Tema 4</span><span class="topic-name">Funciones y reutilizacion</span><span class="topic-hours">8 h · 3T / 5P</span></div>
                 <div class="topic-body">
                   <p>El principio DRY aplicado al diseno visual. Transicion entre escribir lineas y disenar estructuras de software.</p>
                   <ul>
@@ -281,7 +315,7 @@
                 </div>
               </div>
               <div class="topic">
-                <div class="topic-header"><span class="topic-num">Tema 5</span><span class="topic-name">Proyectos visuales interactivos</span><span class="topic-hours">7 h · 2T / 5P</span></div>
+                <div class="topic-header" aria-expanded="false"><span class="topic-num">Tema 5</span><span class="topic-name">Proyectos visuales interactivos</span><span class="topic-hours">7 h · 2T / 5P</span></div>
                 <div class="topic-body">
                   <p>La variable del tiempo entra al lienzo: animaciones y mecanismos de interaccion.</p>
                   <ul>
@@ -297,6 +331,10 @@
               </div>
             </div>
 
+            </div><!-- /topics -->
+            </div><!-- /tab-panel temas -->
+
+            <div class="tab-panel" data-tab="cronograma">
             <h4>Cronograma Fase 3 (8 semanas)</h4>
             <table class="data-table">
               <thead><tr><th>Semana</th><th>Contenido</th><th>T (h)</th><th>P (h)</th></tr></thead>
@@ -311,7 +349,9 @@
                 <tr><td>8</td><td>Proyecto Integrador + sustentacion final</td><td>—</td><td>6</td></tr>
               </tbody>
             </table>
+            </div><!-- /tab-panel cronograma -->
 
+            <div class="tab-panel" data-tab="proyectos">
             <h4>Proyectos de aplicacion</h4>
             <div class="projects-grid">
               <div class="project-card"><strong>P1.A — Arcoiris</strong><br>Arco cromatico de 6 niveles con <code>arc()</code> usando valores hexadecimales. · 45 min</div>
@@ -332,6 +372,7 @@
               <p><strong>Duracion:</strong> 6 h de laboratorio (2 bloques) + sustentacion de 5 minutos.</p>
               <div class="promotion-box"><strong>Criterio de promocion a Fase 4:</strong> 85% de hitos tecnicos validados + promedio &gt;4 en autopercepcion + aprobacion del proyecto integrador.</div>
             </div>
+            </div><!-- /tab-panel proyectos -->
 
             <h4>Distribucion de horas</h4>
             <table class="data-table">
@@ -381,9 +422,15 @@
             </table>
 
             <h4>Temas y subtemas</h4>
+            <div class="tab-nav">
+              <button class="tab-btn is-active" data-tab="temas">Temas</button>
+              <button class="tab-btn" data-tab="proyectos">Proyectos</button>
+              <button class="tab-btn" data-tab="cronograma">Cronograma</button>
+            </div>
+            <div class="tab-panel is-active" data-tab="temas">
             <div class="topics">
               <div class="topic">
-                <div class="topic-header"><span class="topic-num">Tema 0</span><span class="topic-name">Del sketch al script: entorno real</span><span class="topic-hours">4 h · 1.5T / 2.5P</span></div>
+                <div class="topic-header" aria-expanded="false"><span class="topic-num">Tema 0</span><span class="topic-name">Del sketch al script: entorno real</span><span class="topic-hours">4 h · 1.5T / 2.5P</span></div>
                 <div class="topic-body">
                   <p>El salto mas significativo de la ruta: de la interfaz grafica de Processing a ficheros <code>.py</code> ejecutados desde la terminal.</p>
                   <ul>
@@ -400,7 +447,7 @@
                 </div>
               </div>
               <div class="topic">
-                <div class="topic-header"><span class="topic-num">Tema 1</span><span class="topic-name">Listas y diccionarios — Big 4</span><span class="topic-hours">14 h · 4.5T / 9.5P</span></div>
+                <div class="topic-header" aria-expanded="false"><span class="topic-num">Tema 1</span><span class="topic-name">Listas y diccionarios — Big 4</span><span class="topic-hours">14 h · 4.5T / 9.5P</span></div>
                 <div class="topic-body">
                   <p>De variables aisladas a colecciones organizadas. Criterio tecnico para seleccionar la arquitectura optima segun la naturaleza del problema.</p>
                   <ul>
@@ -416,7 +463,7 @@
                 </div>
               </div>
               <div class="topic">
-                <div class="topic-header"><span class="topic-num">Tema 2</span><span class="topic-name">Lectura y escritura de archivos</span><span class="topic-hours">10 h · 3T / 7P</span></div>
+                <div class="topic-header" aria-expanded="false"><span class="topic-num">Tema 2</span><span class="topic-name">Lectura y escritura de archivos</span><span class="topic-hours">10 h · 3T / 7P</span></div>
                 <div class="topic-body">
                   <p>Transicion a la persistencia de datos. Consumir flujos externos y generar archivos interoperables.</p>
                   <ul>
@@ -432,7 +479,7 @@
                 </div>
               </div>
               <div class="topic">
-                <div class="topic-header"><span class="topic-num">Tema 3</span><span class="topic-name">Automatizacion de tareas simples</span><span class="topic-hours">10 h · 3T / 7P</span></div>
+                <div class="topic-header" aria-expanded="false"><span class="topic-num">Tema 3</span><span class="topic-name">Automatizacion de tareas simples</span><span class="topic-hours">10 h · 3T / 7P</span></div>
                 <div class="topic-body">
                   <p>"Como aplico esto en mi entorno laboral?" Automatizacion de flujos repetitivos sobre sistemas de archivos.</p>
                   <ul>
@@ -448,7 +495,7 @@
                 </div>
               </div>
               <div class="topic">
-                <div class="topic-header"><span class="topic-num">Tema 4</span><span class="topic-name">Organizacion del codigo</span><span class="topic-hours">8 h · 2.5T / 5.5P</span></div>
+                <div class="topic-header" aria-expanded="false"><span class="topic-num">Tema 4</span><span class="topic-name">Organizacion del codigo</span><span class="topic-hours">8 h · 2.5T / 5.5P</span></div>
                 <div class="topic-body">
                   <p>De script funcional a arquitectura de proyecto profesional que cualquier colaborador puede interpretar y mantener.</p>
                   <ul>
@@ -462,8 +509,10 @@
                   <p class="topic-ref">Head First Python, cap. 3.</p>
                 </div>
               </div>
-            </div>
+            </div><!-- /topics -->
+            </div><!-- /tab-panel temas -->
 
+            <div class="tab-panel" data-tab="proyectos">
             <div class="final-challenge">
               <h4>Proyecto integrador: "Cuentas Claras"</h4>
               <p>Mini sistema de reporte de gastos personales. Una persona exporta sus movimientos en CSV por mes. Al final del trimestre quiere: informe legible, grafico de barras por categoria, archivo reutilizable. Solo Python + Biblioteca Estandar.</p>
@@ -471,7 +520,9 @@
               <p><strong>Duracion:</strong> 6 h de taller final + trabajo incremental durante el modulo.</p>
               <div class="promotion-box"><strong>Prueba de fuego:</strong> el dia de cierre cada participante recibe datos desconocidos — mes adicional, categoria nueva, 3 defectos nuevos — y tiene 10 minutos para procesarlos. Un proyecto que solo funciona con sus propios datos no esta terminado.</div>
             </div>
+            </div><!-- /tab-panel proyectos -->
 
+            <div class="tab-panel" data-tab="cronograma">
             <h4>Cronograma Fase 4 (9 semanas)</h4>
             <table class="data-table">
               <thead><tr><th>Semana</th><th>Contenido</th><th>Lectura</th><th>Entrega</th></tr></thead>
@@ -487,6 +538,7 @@
                 <tr><td>9</td><td>Taller de cierre: integrador + prueba de fuego</td><td>—</td><td>Cuentas Claras</td></tr>
               </tbody>
             </table>
+            </div><!-- /tab-panel cronograma -->
 
             <h4>Distribucion de horas</h4>
             <table class="data-table">
@@ -508,7 +560,7 @@
       </section>
 
       <!-- TABLA PY5 / PROCESSING -->
-      <section id="py5tabla">
+      <section id="py5tabla" class="reveal">
         <h2>Tabla py5 / Processing</h2>
         <p class="section-desc">
           py5 usa <code>snake_case</code> donde el libro <em>Learn Python Visually</em> usa <code>camelCase</code>.
@@ -582,7 +634,7 @@
       </section>
 
       <!-- REPOS DEL TRACK -->
-      <section id="repos">
+      <section id="repos" class="reveal">
         <h2>Repos del track</h2>
         <p class="section-desc">Cada modulo de la ruta vive en su propio repositorio. Esta guia se actualiza a medida que se suman.</p>
         <div class="repos-grid">
@@ -612,7 +664,7 @@
       </section>
 
       <!-- RECURSOS -->
-      <section id="recursos">
+      <section id="recursos" class="reveal">
         <h2>Recursos mapeados</h2>
         <div class="resources-grid">
           <div class="resource-group">
@@ -658,7 +710,7 @@
       </section>
 
       <!-- DOCUMENTACION OFICIAL FASE 4 -->
-      <section id="docs-oficiales">
+      <section id="docs-oficiales" class="reveal">
         <h2>Documentacion oficial — Fase 4</h2>
         <p class="section-desc">
           Se enseña explicitamente a consultarla; es un logro transversal del modulo.
@@ -707,7 +759,7 @@
       </section>
 
       <!-- PRACTICA -->
-      <section id="practica">
+      <section id="practica" class="reveal">
         <h2>Recursos de practica</h2>
         <p class="section-desc">Plataformas y herramientas para reforzar lo aprendido fuera de las sesiones.</p>
         <div class="practice-grid">
@@ -745,7 +797,7 @@
       </section>
 
       <!-- HITOS CLAVE -->
-      <section id="hitos">
+      <section id="hitos" class="reveal">
         <h2>Hitos clave del programa</h2>
         <p class="section-desc">El facilitador registra el estado como Logrado, En proceso o No logrado. No se avanza de fase si el cumplimiento es inferior al umbral establecido.</p>
         <div class="milestones">
@@ -771,7 +823,7 @@
       </section>
 
       <!-- CHECKLIST PERSONAL -->
-      <section id="checklist">
+      <section id="checklist" class="reveal">
         <h2>Checklist personal de progresion</h2>
         <p class="section-desc">
           Marca cada item exclusivamente cuando logres ejecutar la tarea sin recurrir a material externo.
@@ -913,7 +965,7 @@
       </section>
 
       <!-- PLAYGROUND -->
-      <section id="playground">
+      <section id="playground" class="reveal">
         <h2>Playground Python</h2>
         <p class="section-desc">Motor Python corriendo 100% en tu navegador via Pyodide (WebAssembly). Sin backend ni instalacion. <kbd>Ctrl+Enter</kbd> para ejecutar.</p>
         <div class="playground-area">

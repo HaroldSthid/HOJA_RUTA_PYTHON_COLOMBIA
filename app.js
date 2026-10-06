@@ -404,4 +404,224 @@ document.addEventListener('DOMContentLoaded', function () {
   initModuleToggles();
   initChecklist();
   initPlayground();
+  initReadProgress();
+  initScrollReveal();
+  initHeroStats();
+  initPhasePipeline();
+  initFlipCards();
+  initTopicAccordions();
+  initModuleTabs();
+  initConfetti();
+  initTypewriter();
 });
+
+/* =============================================
+   NEW INTERACTIVE FEATURES
+   ============================================= */
+
+/* --- FEATURE 1: READ PROGRESS BAR --- */
+function initReadProgress() {
+  var bar = document.createElement('div');
+  bar.id = 'read-progress';
+  bar.style.cssText = 'position:fixed;top:0;left:0;height:3px;width:0%;background:var(--yellow);z-index:9999;transition:width 0.1s ease;pointer-events:none;';
+  document.body.appendChild(bar);
+  window.addEventListener('scroll', function () {
+    var scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
+    bar.style.width = pct + '%';
+  }, { passive: true });
+}
+
+/* --- FEATURE 2: SCROLL REVEAL --- */
+function initScrollReveal() {
+  if (!('IntersectionObserver' in window)) {
+    document.querySelectorAll('main > section.reveal').forEach(function (s) {
+      s.classList.add('is-visible');
+    });
+    return;
+  }
+  var sections = document.querySelectorAll('main > section.reveal');
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  sections.forEach(function (s) {
+    var rect = s.getBoundingClientRect();
+    if (rect.top < 50) {
+      s.classList.add('is-visible');
+    } else {
+      observer.observe(s);
+    }
+  });
+}
+
+/* --- FEATURE 3: HERO STATS COUNTER --- */
+function initHeroStats() {
+  var statsEl = document.querySelector('.hero-stats');
+  if (!statsEl || !('IntersectionObserver' in window)) return;
+  var ran = false;
+  var observer = new IntersectionObserver(function (entries) {
+    if (!entries[0].isIntersecting || ran) return;
+    ran = true;
+    observer.disconnect();
+    statsEl.querySelectorAll('.stat-num').forEach(function (el) {
+      var target = parseInt(el.getAttribute('data-target'), 10);
+      var start = performance.now();
+      var duration = 1500;
+      function step(now) {
+        var elapsed = now - start;
+        var progress = Math.min(elapsed / duration, 1);
+        // easeOut cubic
+        var eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.round(eased * target);
+        if (progress < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  }, { threshold: 0.5 });
+  observer.observe(statsEl);
+}
+
+/* --- FEATURE 4: PHASE PIPELINE --- */
+function initPhasePipeline() {
+  var nodes = document.querySelectorAll('.pipe-node');
+  var phases = document.querySelectorAll('.phase');
+  nodes.forEach(function (node) {
+    node.addEventListener('click', function () {
+      var idx = parseInt(node.getAttribute('data-phase'), 10) - 1;
+      var phase = phases[idx];
+      if (phase) phase.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  });
+}
+
+/* --- FEATURE 5: FLIP CARDS (touch toggle) --- */
+function initFlipCards() {
+  document.querySelectorAll('.flip-card').forEach(function (card) {
+    card.addEventListener('pointerdown', function (e) {
+      if (e.pointerType === 'touch') {
+        card.classList.toggle('is-flipped');
+      }
+    });
+  });
+}
+
+/* --- FEATURE 6: TOPIC ACCORDIONS --- */
+function initTopicAccordions() {
+  document.querySelectorAll('.topics').forEach(function (topicsGroup) {
+    var headers = topicsGroup.querySelectorAll('.topic-header');
+    headers.forEach(function (header, idx) {
+      var body = header.nextElementSibling;
+      if (!body || !body.classList.contains('topic-body')) return;
+      // Collapse all except first
+      if (idx === 0) {
+        body.style.maxHeight = body.scrollHeight + 'px';
+        header.setAttribute('aria-expanded', 'true');
+        header.classList.add('is-open');
+      } else {
+        body.style.maxHeight = '0';
+        body.style.paddingTop = '0';
+        body.style.paddingBottom = '0';
+        header.setAttribute('aria-expanded', 'false');
+      }
+      header.addEventListener('click', function () {
+        var isOpen = header.getAttribute('aria-expanded') === 'true';
+        if (isOpen) {
+          body.style.maxHeight = '0';
+          body.style.paddingTop = '0';
+          body.style.paddingBottom = '0';
+          header.setAttribute('aria-expanded', 'false');
+          header.classList.remove('is-open');
+        } else {
+          body.style.maxHeight = body.scrollHeight + 'px';
+          body.style.paddingTop = '';
+          body.style.paddingBottom = '';
+          header.setAttribute('aria-expanded', 'true');
+          header.classList.add('is-open');
+        }
+      });
+    });
+  });
+}
+
+/* --- FEATURE 7: MODULE TABS --- */
+function initModuleTabs() {
+  document.querySelectorAll('.module-content').forEach(function (mc) {
+    var btns = mc.querySelectorAll('.tab-btn');
+    var panels = mc.querySelectorAll('.tab-panel');
+    if (!btns.length || !panels.length) return;
+    btns.forEach(function (btn, i) {
+      btn.addEventListener('click', function () {
+        btns.forEach(function (b) { b.classList.remove('is-active'); });
+        panels.forEach(function (p) { p.classList.remove('is-active'); });
+        btn.classList.add('is-active');
+        var tab = btn.getAttribute('data-tab');
+        var targetPanel = mc.querySelector('.tab-panel[data-tab="' + tab + '"]');
+        if (targetPanel) targetPanel.classList.add('is-active');
+      });
+    });
+  });
+}
+
+/* --- FEATURE 9: CHECKLIST CONFETTI --- */
+function initConfetti() {
+  var colors = ['#ffd43b', '#4b8bbe', '#2fb350', '#e24329'];
+  document.querySelectorAll('.cl-block').forEach(function (block) {
+    var checkboxes = block.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach(function (cb) {
+      cb.addEventListener('change', function () {
+        var all = Array.from(checkboxes);
+        if (all.every(function (c) { return c.checked; })) {
+          launchConfetti(colors);
+        }
+      });
+    });
+  });
+}
+
+function launchConfetti(colors) {
+  for (var i = 0; i < 35; i++) {
+    (function () {
+      var p = document.createElement('div');
+      p.className = 'confetti-particle';
+      p.style.left = Math.random() * 100 + 'vw';
+      p.style.background = colors[Math.floor(Math.random() * colors.length)];
+      p.style.animationDelay = (Math.random() * 0.4) + 's';
+      p.style.transform = 'translateX(' + (Math.random() * 60 - 30) + 'px)';
+      document.body.appendChild(p);
+      setTimeout(function () { p.remove(); }, 2500);
+    })();
+  }
+}
+
+/* --- FEATURE 10: TYPEWRITER --- */
+function initTypewriter() {
+  var staticEl  = document.getElementById('tw-static');
+  var dynamicEl = document.getElementById('tw-dynamic');
+  if (!staticEl || !dynamicEl) return;
+  var staticText  = 'Empeza por la guia, ';
+  var dynamicText = 'no por el repo';
+  var si = 0;
+  function typeStatic() {
+    if (si < staticText.length) {
+      staticEl.textContent += staticText[si];
+      si++;
+      setTimeout(typeStatic, 60);
+    } else {
+      var di = 0;
+      function typeDynamic() {
+        if (di < dynamicText.length) {
+          dynamicEl.textContent += dynamicText[di];
+          di++;
+          setTimeout(typeDynamic, 60);
+        }
+      }
+      typeDynamic();
+    }
+  }
+  typeStatic();
+}

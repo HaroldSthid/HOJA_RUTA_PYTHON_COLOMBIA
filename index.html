@@ -3,1010 +3,600 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hoja de Ruta Python — Colombia</title>
+  <title>Hoja de Ruta Python — Python Colombia & Boyacá Dev</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- SIDEBAR TOGGLE (movil) -->
-  <button class="sidebar-fab" id="sidebar-fab" aria-label="Abrir menu de navegacion">
+  <!-- BARRA DE PROGRESO DE LECTURA -->
+  <div id="read-progress"></div>
+
+  <!-- BOTÓN FLOTANTE SIDEBAR (Móvil) -->
+  <button class="sidebar-fab" id="sidebar-fab" aria-label="Abrir menú de navegación">
     <span class="fab-icon">&#9776;</span>
   </button>
 
-  <!-- BOTON RE-ABRIR sidebar en desktop (aparece cuando esta cerrado) -->
-  <button class="sidebar-reopen" id="sidebar-reopen" aria-label="Mostrar navegacion">&#9776;</button>
+  <!-- BOTÓN RE-ABRIR SIDEBAR (Desktop) -->
+  <button class="sidebar-reopen" id="sidebar-reopen" aria-label="Mostrar navegación">&#9776;</button>
 
-  <!-- OVERLAY movil -->
+  <!-- OVERLAY MÓVIL -->
   <div class="sidebar-overlay" id="sidebar-overlay"></div>
 
-  <!-- SIDEBAR -->
+  <!-- SIDEBAR DE NAVEGACIÓN -->
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-header">
       <span class="sidebar-brand">Python Colombia</span>
-      <button class="sidebar-close" id="sidebar-close" aria-label="Cerrar menu" title="Ocultar menu">&#x2715;</button>
+      <button class="sidebar-close" id="sidebar-close" aria-label="Cerrar menú">&#x2715;</button>
     </div>
     <nav class="sidebar-nav">
       <ul>
-        <li><a href="#principios" class="sidebar-link" data-section="principios">Principios</a></li>
-        <li><a href="#ruta" class="sidebar-link" data-section="ruta">Ruta sugerida</a></li>
+        <li><a href="#principios" class="sidebar-link" data-section="principios">Principios & Enfoque</a></li>
+        <li><a href="#ruta" class="sidebar-link" data-section="ruta">Ruta de Aprendizaje</a></li>
         <li>
-          <a href="#modulos" class="sidebar-link" data-section="modulos">Fichas de modulos</a>
+          <a href="#fases" class="sidebar-link" data-section="fases">Fases Detalladas (1 al 6)</a>
           <ul class="sidebar-sub">
-            <li><a href="#fase3" class="sidebar-sublink">Fase 3 — Visual</a></li>
-            <li><a href="#fase4" class="sidebar-sublink">Fase 4 — Problemas reales</a></li>
+            <li><a href="#fase1" class="sidebar-sublink">Fase 1. Pensamiento</a></li>
+            <li><a href="#fase2" class="sidebar-sublink">Fase 2. Primeros Pasos</a></li>
+            <li><a href="#fase3" class="sidebar-sublink">Fase 3. Visual & py5</a></li>
+            <li><a href="#fase4" class="sidebar-sublink">Fase 4. Problemas Reales</a></li>
+            <li><a href="#fase5" class="sidebar-sublink">Fase 5. Web & Django</a></li>
+            <li><a href="#fase6" class="sidebar-sublink">Fase 6. Datos & IA</a></li>
           </ul>
         </li>
-        <li><a href="#py5tabla" class="sidebar-link" data-section="py5tabla">Tabla py5 / Processing</a></li>
-        <li><a href="#repos" class="sidebar-link" data-section="repos">Repos del track</a></li>
-        <li><a href="#recursos" class="sidebar-link" data-section="recursos">Recursos</a></li>
-        <li><a href="#docs-oficiales" class="sidebar-link" data-section="docs-oficiales">Docs oficiales</a></li>
-        <li><a href="#practica" class="sidebar-link" data-section="practica">Practica</a></li>
-        <li><a href="#hitos" class="sidebar-link" data-section="hitos">Hitos clave</a></li>
-        <li><a href="#checklist" class="sidebar-link" data-section="checklist">Checklist personal</a></li>
+        <li><a href="#estudiantes" class="sidebar-link" data-section="estudiantes">Manual del Estudiante</a></li>
+        <li><a href="#errores" class="sidebar-link" data-section="errores">Diagnóstico de Errores</a></li>
+        <li><a href="#comandos" class="sidebar-link" data-section="comandos">Terminal & Git CheatSheet</a></li>
+        <li><a href="#videos" class="sidebar-link" data-section="videos">Videos & Clases</a></li>
+        <li><a href="#enlaces" class="sidebar-link" data-section="enlaces">Recursos y Bibliografía</a></li>
+        <li><a href="#faq" class="sidebar-link" data-section="faq">Preguntas Frecuentes</a></li>
+        <li><a href="#checklist" class="sidebar-link" data-section="checklist">Checklist Personal (+30)</a></li>
         <li><a href="#playground" class="sidebar-link" data-section="playground">Playground Python</a></li>
       </ul>
     </nav>
     <div class="sidebar-progress">
-      <div class="sp-label">Tu progreso en el checklist</div>
+      <div class="sp-label">Tu progreso general</div>
       <div class="sp-bar-wrap"><div class="sp-bar" id="sp-bar"></div></div>
-      <div class="sp-count" id="sp-count">0 / 70</div>
+      <div class="sp-count" id="sp-count">0 / 30</div>
     </div>
   </aside>
 
-  <!-- LAYOUT WRAPPER -->
+  <!-- LAYOUT PRINCIPAL -->
   <div class="layout">
 
-    <!-- HERO -->
+    <!-- HERO SECCIÓN -->
     <header class="hero">
       <div class="container">
-        <p class="cohort-label">Ruta de Formacion en Python · Colombia</p>
-        <h1><span id="tw-static"></span><span id="tw-dynamic" class="tw-yellow"></span><span class="tw-cursor">|</span></h1>
+        <p class="cohort-label">Proyecto Nacional · Python Colombia & Boyacá Dev</p>
+        <h1>Hoja de Ruta en Tech: <span>Aprender sin Miedo</span></h1>
         <p class="hero-desc">
-          Esta pagina mapea la ruta completa de Python: de los fundamentos visuales
-          a la resolucion de problemas reales con archivos, automatizacion y proyectos
-          estructurados. Cada fase se materializa en su propio repositorio. Esta guia
-          es el hilo conductor entre todos ellos.
+          Una guía inclusiva, accesible y exhaustiva diseñada por la comunidad para desarrollar
+          pensamiento lógico, perder el miedo a la programación y dominar el desarrollo en Python desde cero hasta la industria.
         </p>
+        <div class="hero-stats">
+          <div class="hero-stat"><span class="stat-num">6</span><span class="stat-label">Fases Clave</span></div>
+          <div class="hero-stat"><span class="stat-num">15+</span><span class="stat-label">Recursos Abiertos</span></div>
+          <div class="hero-stat"><span class="stat-num">30</span><span class="stat-label">Hitos de Progreso</span></div>
+        </div>
       </div>
-      <div class="hero-stats"><div class="hero-stat"><span class="stat-num" data-target="6">0</span><span class="stat-label">Fases</span></div><div class="hero-stat"><span class="stat-num" data-target="98">0</span><span class="stat-label">Horas totales</span></div><div class="hero-stat"><span class="stat-num" data-target="70">0</span><span class="stat-label">Hitos</span></div></div>
     </header>
 
     <main class="container">
 
       <!-- PRINCIPIOS DE LA RUTA -->
       <section id="principios" class="reveal">
-        <h2>Principios de la Ruta</h2>
+        <h2>Principios Fundamentales de la Ruta</h2>
+        <p class="section-desc">Bases metodológicas para garantizar un aprendizaje humano, colaborativo, accesible y resiliente.</p>
         <div class="principles-grid">
-          <div class="principle-card flip-card">
-            <div class="flip-inner">
-              <div class="flip-front">
-                <h3>Aprender haciendo</h3>
-                <p>Proyectos desde el primer dia. La teoria nunca se dicta en bloques mayores a 25 minutos sin codigo de por medio.</p>
-              </div>
-              <div class="flip-back"><pre class="flip-code">print("Hola")
-ejecutar()</pre></div>
-            </div>
+          <div class="principle-card">
+            <h3>Humanización & Accesibilidad</h3>
+            <p>Uso de lenguaje inclusivo, diseño adaptable y referencias espaciales precisas para todo tipo de perfiles y dispositivos.</p>
           </div>
-          <div class="principle-card flip-card">
-            <div class="flip-inner">
-              <div class="flip-front">
-                <h3>Intuicion primero</h3>
-                <p>Priorizar la intuicion antes que la teoria. Los conceptos se anclan en ejemplos visuales y cotidianos antes de formalizarse.</p>
-              </div>
-              <div class="flip-back"><pre class="flip-code">ver = lambda x: print(x)</pre></div>
-            </div>
+          <div class="principle-card">
+            <h3>Aprender Haciendo</h3>
+            <p>Proyectos prácticos desde el primer día para entender lógica aplicada, conectando semilleros locales con la industria.</p>
           </div>
-          <div class="principle-card flip-card">
-            <div class="flip-inner">
-              <div class="flip-front">
-                <h3>Sin sobre-ingenieria</h3>
-                <p>Evitar inicialmente bases de datos, desarrollo web, frameworks y arquitectura de software. Primero productividad real.</p>
-              </div>
-              <div class="flip-back"><pre class="flip-code">import this</pre></div>
-            </div>
+          <div class="principle-card">
+            <h3>Resiliencia Técnica</h3>
+            <p>Disciplina y manejo del error como pilares del aprendizaje. Fomentar métodos propios de depuración antes que memorizar sintaxis.</p>
           </div>
-          <div class="principle-card flip-card">
-            <div class="flip-inner">
-              <div class="flip-front">
-                <h3>Para cualquier profesion</h3>
-                <p>Enfoque practico que permite a cualquier persona descubrir como Python puede aumentar su productividad, independientemente de su area.</p>
-              </div>
-              <div class="flip-back"><pre class="flip-code">python archivo.py</pre></div>
-            </div>
-          </div>
-          <div class="principle-card flip-card">
-            <div class="flip-inner">
-              <div class="flip-front">
-                <h3>Ejemplos visuales</h3>
-                <p>Explicar conceptos con representaciones graficas y casos cotidianos. El error se ve, no solo se lee en una terminal.</p>
-              </div>
-              <div class="flip-back"><pre class="flip-code">rect(10, 10, 80, 80)</pre></div>
-            </div>
+          <div class="principle-card">
+            <h3>Control de Versiones</h3>
+            <p>Integración temprana con Git, GitHub y GitLab documentando flujos de trabajo profesionales y despliegues continuos.</p>
           </div>
         </div>
         <div class="result-box">
-          <strong>Resultado esperado:</strong> Al finalizar la ruta, el estudiante comprendera los fundamentos del
-          pensamiento computacional, sera capaz de escribir programas sencillos en Python y tendra una base
-          solida para continuar hacia areas como automatizacion, analisis de datos, inteligencia artificial
-          o desarrollo de aplicaciones.
+          <strong>Objetivo central:</strong> Desarrollar pensamiento computacional, perder el miedo a la tecnología y estructurar bases sólidas para avanzar hacia automatización, web, bases de datos o inteligencia artificial.
         </div>
       </section>
 
-      <!-- RUTA SUGERIDA -->
+      <!-- RUTA DE APRENDIZAJE -->
       <section id="ruta" class="reveal">
-        <h2>Ruta sugerida</h2>
-        <p class="section-desc">
-          La progresion de fondo es siempre la misma: de la logica visual a la
-          automatizacion, pasando por fundamentos, estructuras de datos y proyectos reales.
-          No se avanza entre fases si el cumplimiento de hitos es inferior al 80%.
-        </p>
-        <div class="phase-pipeline"><div class="pipeline-track"></div><button class="pipe-node pipe-node--done" data-phase="1" title="Fase 1"><span>1</span></button><button class="pipe-node pipe-node--done" data-phase="2" title="Fase 2"><span>2</span></button><button class="pipe-node pipe-node--active" data-phase="3" title="Fase 3"><span>3</span></button><button class="pipe-node pipe-node--future" data-phase="4" title="Fase 4"><span>4</span></button><button class="pipe-node pipe-node--future" data-phase="5" title="Fase 5"><span>5</span></button><button class="pipe-node pipe-node--future" data-phase="6" title="Fase 6"><span>6</span></button></div>
+        <h2>Ruta de Aprendizaje General</h2>
+        <p class="section-desc">El mapa general estructurado en seis fases progresivas de formación.</p>
         <ol class="phases">
           <li class="phase phase--done">
             <span class="phase-num">1</span>
             <div class="phase-body">
-              <h3>Fundamentos de Python</h3>
-              <p>Variables, tipos de datos, <code>print()</code>, <code>input()</code>, operadores y primeras estructuras de control. Primer contacto con Turtle como herramienta de validacion visual inmediata.</p>
-              <span class="badge badge--prev">Fase previa</span>
+              <h3>Pensamiento Computacional (Sin código)</h3>
+              <p>Algoritmos lógicos, descomposición de problemas y modelo Entrada → Proceso → Salida.</p>
+              <span class="badge badge--prev">Fase 1</span>
             </div>
           </li>
           <li class="phase phase--done">
             <span class="phase-num">2</span>
             <div class="phase-body">
-              <h3>Logica y Control de Flujo</h3>
-              <p>Condicionales, bucles y funciones basicas. Dominio de <code>if</code>, <code>for</code>, <code>while</code> y primeras funciones con parametros. Fundamentos de Turtle consolidados.</p>
-              <span class="badge badge--prev">Fase previa</span>
+              <h3>Primeros Pasos con Python</h3>
+              <p>Instalación, variables, tipos de datos primitivos, <code>print()</code>, <code>input()</code> y Turtle.</p>
+              <span class="badge badge--prev">Fase 2</span>
             </div>
           </li>
           <li class="phase phase--active">
             <span class="phase-num">3</span>
             <div class="phase-body">
-              <h3>Programacion Visual y Creativa</h3>
-              <p>Comprender la logica de programacion mediante el diseno de graficos, patrones y animaciones sencillas. La metodologia vincula cada estructura logica con una representacion grafica instantanea.</p>
-              <div class="phase-meta">
-                <span>46 h acumuladas · 8 semanas · 6 h/semana</span>
-                <a class="phase-meta-link" href="https://colab.research.google.com" target="_blank" rel="noopener">Google Colab + py5</a>
-              </div>
-              <span class="badge badge--active">Estas aca</span>
+              <h3>Programación Visual y Creativa (py5)</h3>
+              <p>Plano cartesiano, condicionales <code>if</code>, bucles <code>for</code> / <code>while</code> y patrones gráficos.</p>
+              <span class="badge badge--active">Fase Actual</span>
             </div>
           </li>
           <li class="phase phase--next">
             <span class="phase-num">4</span>
             <div class="phase-body">
-              <h3>Python para Resolver Problemas Reales</h3>
-              <p>Listas, diccionarios, lectura y escritura de archivos, automatizacion de tareas y organizacion del codigo en proyectos estructurados.</p>
-              <div class="phase-meta">
-                <span>52 h · 9 semanas · ~6 h/semana</span>
-                <a class="phase-meta-link" href="https://www.python.org/downloads/" target="_blank" rel="noopener">Python 3.12 + VS Code</a>
-              </div>
-              <span class="badge badge--next">Proximo</span>
+              <h3>Problemas Reales y Archivos</h3>
+              <p>Listas, diccionarios, lectura y escritura de ficheros locales y automatización básica.</p>
+              <span class="badge badge--next">Fase Siguiente</span>
             </div>
           </li>
           <li class="phase phase--future">
             <span class="phase-num">5</span>
             <div class="phase-body">
-              <h3 class="phase-placeholder">Nombre por definir</h3>
-              <p class="phase-placeholder-desc">Esta fase se anunciara al cierre de la Fase 4. El contenido y el repositorio se agregaran aqui cuando esten disponibles.</p>
-              <span class="badge badge--future">Por definir</span>
+              <h3>Desarrollo Web (Django / Python)</h3>
+              <p>Arquitectura MVC, rutas, plantillas HTML/CSS, bases de datos relacionales y paneles de administración.</p>
+              <span class="badge badge--future">Fase Avanzada</span>
             </div>
           </li>
           <li class="phase phase--future">
             <span class="phase-num">6</span>
             <div class="phase-body">
-              <h3 class="phase-placeholder">Nombre por definir</h3>
-              <p class="phase-placeholder-desc">Esta fase se anunciara al cierre de la Fase 5. El contenido y el repositorio se agregaran aqui cuando esten disponibles.</p>
-              <span class="badge badge--future">Por definir</span>
+              <h3>Datos, APIs e Inteligencia Artificial</h3>
+              <p>Consumo de APIs REST, análisis básico de datos y modelos iniciales con bibliotecas abiertas.</p>
+              <span class="badge badge--future">Fase Experta</span>
             </div>
           </li>
         </ol>
       </section>
 
-      <!-- FICHAS DE MODULOS -->
-      <section id="modulos" class="reveal">
-        <h2>Fichas de modulos</h2>
-        <p class="section-desc">Cada fase tiene una ficha con los detalles de implementacion: objetivos, temas, logros medibles y proyectos de aplicacion.</p>
+      <!-- FASES DETALLADAS -->
+      <section id="fases" class="reveal">
+        <h2>Detalle Exhaustivo por Fases</h2>
+        <p class="section-desc">Desglose temático completo de cada etapa para orientar de forma rigurosa al estudiante.</p>
 
-        <!-- FASE 3 -->
-        <div class="module-card" id="fase3-card">
-          <button class="module-toggle" aria-expanded="false" data-target="fase3-content">
-            <span class="module-num">Fase 3</span>
-            <span class="module-title">Programacion Visual y Creativa</span>
-            <span class="module-hours">46 h</span>
+        <!-- FASE 1 -->
+        <div class="module-card" id="fase1">
+          <button class="module-toggle" aria-expanded="false" data-target="c-fase1">
+            <span class="module-num">Fase 1</span>
+            <span class="module-title">Pensamiento Computacional</span>
+            <span class="module-hours">10 Horas</span>
             <span class="module-chevron">+</span>
           </button>
-          <div class="module-content" id="fase3-content" hidden>
-
+          <div class="module-content" id="c-fase1" hidden>
             <table class="ficha-table">
               <tbody>
-                <tr><th>Objetivo</th><td>Comprender la logica de programacion mediante el diseno de graficos, patrones y animaciones sencillas.</td></tr>
-                <tr><th>Modalidad</th><td>Taller practico guiado bajo el principio de aprender haciendo.</td></tr>
-                <tr><th>Duracion</th><td>46 horas acumuladas (14 h de teoria y 32 h de practica).</td></tr>
-                <tr><th>Distribucion</th><td>8 semanas con una carga aproximada de 6 h semanales.</td></tr>
-                <tr><th>Prerrequisitos</th><td>Fases 1 y 2 completas: <code>print()</code>, variables, <code>input()</code> y fundamentos de Turtle.</td></tr>
-                <tr><th>Herramienta</th><td>Google Colab + py5 (API de Processing sobre Python real) + ipywidgets + Pillow.
-                  <br><a class="tool-btn" href="https://colab.research.google.com" target="_blank" rel="noopener">Abrir Google Colab</a>
-                  <a class="tool-btn tool-btn--sec" href="https://py5coding.org" target="_blank" rel="noopener">Docs py5</a>
-                  <a class="tool-btn tool-btn--sec" href="https://processing.org/download" target="_blank" rel="noopener">Descargar Processing</a>
-                </td></tr>
-                <tr><th>Libro base</th><td><em>Learn Python Visually</em> — Tristan Bunn (No Starch Press, 2021).</td></tr>
+                <tr><th>Objetivo</th><td>Entrenar la mente para estructurar soluciones lógicas antes de abrir un editor de código.</td></tr>
+                <tr><th>Temas Clave</th><td>Definición de algoritmo · Modelo computacional Entrada → Proceso → Salida · Algoritmos de la vida cotidiana (ej. recetas de cocina, instrucciones de ensamblaje) · Abstracción y descomposición de problemas complejos.</td></tr>
+                <tr><th>Recurso Clave</th><td>The Cartoon Guide to Computer Science – Larry Gonick.</td></tr>
+                <tr><th>Proyecto Guía</th><td>Diseñar en papel un diagrama de flujo para calcular el presupuesto mensual del hogar.</td></tr>
               </tbody>
             </table>
+          </div>
+        </div>
 
-            <div class="rule-box">
-              <strong>Regla del modulo:</strong> se prohibe dedicar mas de 20 minutos a la teoria sin que el alumno desarrolle codigo que proyecte resultados visuales en su monitor.
-            </div>
-
-            <h4>Temas y subtemas</h4>
-            <div class="tab-nav">
-              <button class="tab-btn is-active" data-tab="temas">Temas</button>
-              <button class="tab-btn" data-tab="proyectos">Proyectos</button>
-              <button class="tab-btn" data-tab="cronograma">Cronograma</button>
-            </div>
-            <div class="tab-panel is-active" data-tab="temas">
-            <div class="topics">
-              <div class="topic">
-                <div class="topic-header" aria-expanded="false"><span class="topic-num">Tema 0</span><span class="topic-name">Preparacion del entorno</span><span class="topic-hours">2 h</span></div>
-                <div class="topic-body">
-                  <p>Instalacion y validacion del espacio de trabajo. Una configuracion erronea impide el progreso, por lo que se aborda como unidad critica con sus propios hitos de finalizacion.</p>
-                  <ul>
-                    <li>Instalacion de Processing y habilitacion del Python Mode.</li>
-                    <li>Componentes del editor: lienzo de codigo, funcion Run, consola y ventana de visualizacion.</li>
-                    <li>Gestion de sketches: organizacion de ficheros, guardado y nomenclatura.</li>
-                    <li>Interpretacion de fallos: sintaxis, sangria y referencias no definidas.</li>
-                  </ul>
-                  <p class="topic-ref">Referencia: Cap. 1 — Processing Installation and Python Mode Setup.</p>
-                </div>
-              </div>
-              <div class="topic">
-                <div class="topic-header" aria-expanded="false"><span class="topic-num">Tema 1</span><span class="topic-name">Coordenadas y graficos</span><span class="topic-hours">8 h · 3T / 5P</span></div>
-                <div class="topic-body">
-                  <p>El lienzo como sistema cartesiano. El origen esta en la esquina superior izquierda; el eje Y crece hacia abajo.</p>
-                  <ul>
-                    <li>Sistema de coordenadas: <code>size()</code>, <code>width</code>, <code>height</code>.</li>
-                    <li>Primitivas 2D: <code>point()</code>, <code>line()</code>, <code>rect()</code>, <code>ellipse()</code>.</li>
-                    <li>Color y estilo: RGB, HSB, hexadecimal; <code>fill()</code>, <code>stroke()</code>, <code>background()</code>.</li>
-                    <li>Formas complejas: <code>curve()</code>, <code>bezier()</code>, <code>beginShape()</code>, <code>vertex()</code>.</li>
-                    <li>Variables al servicio del dibujo: disenos parametrizables con operador <code>%</code>.</li>
-                    <li>Texto como elemento grafico: <code>text()</code>, alineacion y tamano.</li>
-                  </ul>
-                  <p class="topic-ref">Referencias: Capitulos 1, 2 y 3.</p>
-                </div>
-              </div>
-              <div class="topic">
-                <div class="topic-header" aria-expanded="false"><span class="topic-num">Tema 2</span><span class="topic-name">Condicionales if</span><span class="topic-hours">6 h · 2T / 4P</span></div>
-                <div class="topic-body">
-                  <p>La evaluacion booleana se materializa en cambios visuales en el lienzo.</p>
-                  <ul>
-                    <li>Tipos logicos <code>True</code> / <code>False</code>; valores falsy.</li>
-                    <li>Operadores: <code>==</code>, <code>!=</code>, <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code>.</li>
-                    <li>Arquitectura <code>if</code>, <code>elif</code>, <code>else</code>: sintaxis e indentacion.</li>
-                    <li>Operadores logicos: <code>and</code>, <code>or</code>, <code>not</code>.</li>
-                    <li>Mapeo de cuadrantes; alteracion de propiedades visuales segun estado.</li>
-                  </ul>
-                  <p class="topic-ref">Referencia: Capitulo 4.</p>
-                </div>
-              </div>
-              <div class="topic">
-                <div class="topic-header" aria-expanded="false"><span class="topic-num">Tema 3</span><span class="topic-name">Bucles for y while</span><span class="topic-hours">9 h · 3T / 6P</span></div>
-                <div class="topic-body">
-                  <p>La iteracion como motor de complejidad: desde mallas geometricas hasta mosaicos generativos.</p>
-                  <ul>
-                    <li>Bucle <code>while</code>: condicion de permanencia, prevencion de bucles infinitos.</li>
-                    <li>Bucle <code>for</code> y <code>range()</code>: inicio, fin, salto.</li>
-                    <li>Control: <code>break</code> y <code>continue</code>.</li>
-                    <li>Estructuras anidadas: rejillas 2D (filas x columnas).</li>
-                    <li>Aleatoriedad: <code>random()</code>, <code>randomSeed()</code>, nociones de <code>noise()</code>.</li>
-                    <li>Arte generativo: teselas de Truchet, simetria y repeticion visual.</li>
-                  </ul>
-                  <p class="topic-ref">Referencia: Capitulo 5.</p>
-                </div>
-              </div>
-              <div class="topic">
-                <div class="topic-header" aria-expanded="false"><span class="topic-num">Tema 4</span><span class="topic-name">Funciones y reutilizacion</span><span class="topic-hours">8 h · 3T / 5P</span></div>
-                <div class="topic-body">
-                  <p>El principio DRY aplicado al diseno visual. Transicion entre escribir lineas y disenar estructuras de software.</p>
-                  <ul>
-                    <li>Declaracion <code>def</code>, parametros posicionales, keyword arguments, valores predeterminados.</li>
-                    <li>Sentencia <code>return</code>: subrutinas que dibujan vs. subrutinas que devuelven datos.</li>
-                    <li>Scope: jerarquia local/global; uso responsable de <code>global</code>.</li>
-                    <li>Calculo para animacion: <code>sin()</code>, <code>cos()</code>, <code>radians()</code>, <code>map()</code>, <code>lerp()</code>, <code>dist()</code>.</li>
-                  </ul>
-                  <p class="topic-ref">Referencia: Capitulo 9 + complementos del Capitulo 1.</p>
-                </div>
-              </div>
-              <div class="topic">
-                <div class="topic-header" aria-expanded="false"><span class="topic-num">Tema 5</span><span class="topic-name">Proyectos visuales interactivos</span><span class="topic-hours">7 h · 2T / 5P</span></div>
-                <div class="topic-body">
-                  <p>La variable del tiempo entra al lienzo: animaciones y mecanismos de interaccion.</p>
-                  <ul>
-                    <li>Ciclo de animacion: <code>setup()</code> y <code>draw()</code>; <code>frameRate</code>, <code>frameCount</code>.</li>
-                    <li>Transformaciones: <code>translate()</code>, <code>rotate()</code>, <code>scale()</code>; <code>pushMatrix()</code> / <code>popMatrix()</code>.</li>
-                    <li>Deteccion de colisiones: rebotes con <code>dist()</code>.</li>
-                    <li>Interactividad: <code>mouseX</code>, <code>mouseY</code>, <code>mousePressed()</code>, <code>keyPressed()</code>.</li>
-                    <li>Listas para gestion de multiples entidades graficas.</li>
-                    <li>Exportacion: <code>saveFrame()</code>.</li>
-                  </ul>
-                  <p class="topic-ref">Referencias: Capitulos 6, 7 y 11.</p>
-                </div>
-              </div>
-            </div>
-
-            </div><!-- /topics -->
-            </div><!-- /tab-panel temas -->
-
-            <div class="tab-panel" data-tab="cronograma">
-            <h4>Cronograma Fase 3 (8 semanas)</h4>
-            <table class="data-table">
-              <thead><tr><th>Semana</th><th>Contenido</th><th>T (h)</th><th>P (h)</th></tr></thead>
+        <!-- FASE 2 -->
+        <div class="module-card" id="fase2">
+          <button class="module-toggle" aria-expanded="false" data-target="c-fase2">
+            <span class="module-num">Fase 2</span>
+            <span class="module-title">Primeros Pasos con Python</span>
+            <span class="module-hours">15 Horas</span>
+            <span class="module-chevron">+</span>
+          </button>
+          <div class="module-content" id="c-fase2" hidden>
+            <table class="ficha-table">
               <tbody>
-                <tr><td>1</td><td>Tema 0 + fundamentos del Tema 1 (coordenadas y color)</td><td>3</td><td>3</td></tr>
-                <tr><td>2</td><td>Tema 1 avanzado (trazo complejo y variables) + Entregables P1</td><td>1</td><td>3</td></tr>
-                <tr><td>3</td><td>Tema 2 completo + Retos P2.A y P2.B</td><td>2</td><td>4</td></tr>
-                <tr><td>4</td><td>Tema 3: control de flujo e iteracion simple + P3.A</td><td>3</td><td>3</td></tr>
-                <tr><td>5</td><td>Tema 3 avanzado: anidamiento, azar y patrones + P3.B</td><td>—</td><td>3</td></tr>
-                <tr><td>6</td><td>Tema 4 completo + Proyectos P4</td><td>3</td><td>5</td></tr>
-                <tr><td>7</td><td>Tema 5 completo + Proyectos P5</td><td>2</td><td>5</td></tr>
-                <tr><td>8</td><td>Proyecto Integrador + sustentacion final</td><td>—</td><td>6</td></tr>
+                <tr><th>Objetivo</th><td>Conocer la sintaxis elemental de Python escribiendo programas sencillos en consola.</td></tr>
+                <tr><th>Temas Clave</th><td>Configuración de entornos e instalación de Python 3.12 · La función <code>print()</code> y cadenas de texto · Variables como contenedores de datos · Tipos primitivos: enteros (int), flotantes (float), cadenas (str) y booleanos (bool) · Lectura de datos por teclado con <code>input()</code> · Primeros pasos gráficos con Turtle.</td></tr>
+                <tr><th>Recurso Clave</th><td>Snake Wrangling for Kids – Jason R. Briggs.</td></tr>
+                <tr><th>Proyecto Guía</th><td>Calculadora interactiva de propinas y conversor de unidades monetarias por consola.</td></tr>
               </tbody>
             </table>
-            </div><!-- /tab-panel cronograma -->
+          </div>
+        </div>
 
-            <div class="tab-panel" data-tab="proyectos">
-            <h4>Proyectos de aplicacion</h4>
-            <div class="projects-grid">
-              <div class="project-card"><strong>P1.A — Arcoiris</strong><br>Arco cromatico de 6 niveles con <code>arc()</code> usando valores hexadecimales. · 45 min</div>
-              <div class="project-card"><strong>P1.B — Autorretrato geometrico</strong><br>Composicion exclusivamente con primitivas 2D. Min. 12 figuras, 3 sistemas cromaticos. · 90 min</div>
-              <div class="project-card"><strong>P2.A — Cuatro cuadrantes</strong><br>Identificacion dinamica de zonas mediante coordenadas logicas. · 60 min</div>
-              <div class="project-card"><strong>P2.B — Monitoreo visual reactivo</strong><br>Parametro numerico que altera estado cromatico segun rangos. · 90 min</div>
-              <div class="project-card"><strong>P3.A — Patrones ritmicos</strong><br>Tres esquemas de lineas con estructuras iterativas simples y anidadas. · 90 min</div>
-              <div class="project-card"><strong>P3.B — Mosaico Truchet</strong><br>Rejilla aleatoria. Matriz minima 8x8 con 2+ estilos de tesela. · 120 min</div>
-              <div class="project-card"><strong>P4.A — Refactorizacion</strong><br>Optimizacion del mosaico previo en funciones. Reduccion &gt;30% de lineas. · 75 min</div>
-              <div class="project-card"><strong>P4.B — Jardines y curvas</strong><br>Modulos reutilizables para escenas con curvas trigonometricas. · 120 min</div>
-              <div class="project-card"><strong>P5.A — Animacion DVD</strong><br>Entidad que rebota y cambia color ante colisiones. · 90 min</div>
-              <div class="project-card"><strong>P5.B — Reloj analogico</strong><br>Cronometro visual con funciones de tiempo y <code>pushMatrix()</code>. · 120 min</div>
-            </div>
-
-            <div class="final-challenge">
-              <h4>Reto final: "Ecosistema interactivo y arte generativo"</h4>
-              <p>Ecosistema digital dinamico con comportamiento autonomo. Tematica abierta: habitats marinos, bovedas celestes, crecimiento forestal, flujos urbanos o tableros de control.</p>
-              <p><strong>Duracion:</strong> 6 h de laboratorio (2 bloques) + sustentacion de 5 minutos.</p>
-              <div class="promotion-box"><strong>Criterio de promocion a Fase 4:</strong> 85% de hitos tecnicos validados + promedio &gt;4 en autopercepcion + aprobacion del proyecto integrador.</div>
-            </div>
-            </div><!-- /tab-panel proyectos -->
-
-            <h4>Distribucion de horas</h4>
-            <table class="data-table">
-              <thead><tr><th>Unidad</th><th>Teoria</th><th>Practica</th><th>Total</th></tr></thead>
+        <!-- FASE 3 -->
+        <div class="module-card" id="fase3">
+          <button class="module-toggle" aria-expanded="false" data-target="c-fase3">
+            <span class="module-num">Fase 3</span>
+            <span class="module-title">Programación Visual & py5</span>
+            <span class="module-hours">25 Horas</span>
+            <span class="module-chevron">+</span>
+          </button>
+          <div class="module-content" id="c-fase3" hidden>
+            <table class="ficha-table">
               <tbody>
-                <tr><td>0. Preparacion del entorno</td><td>1</td><td>1</td><td>2</td></tr>
-                <tr><td>1. Coordenadas y graficos</td><td>3</td><td>5</td><td>8</td></tr>
-                <tr><td>2. Condicionales if</td><td>2</td><td>4</td><td>6</td></tr>
-                <tr><td>3. Bucles for y while</td><td>3</td><td>6</td><td>9</td></tr>
-                <tr><td>4. Funciones y modularidad</td><td>3</td><td>5</td><td>8</td></tr>
-                <tr><td>5. Proyectos interactivos</td><td>2</td><td>5</td><td>7</td></tr>
-                <tr><td>Desafio integrador</td><td>—</td><td>6</td><td>6</td></tr>
-                <tr class="total-row"><td>Total</td><td>14</td><td>32</td><td>46</td></tr>
+                <tr><th>Objetivo</th><td>Comprender la lógica de control visual mediante bocetos, coordenadas y animaciones interactivas.</td></tr>
+                <tr><th>Temas Clave</th><td>Sistema cartesiano en pantallas y píxeles · Estructuras de decisión condicional (<code>if</code>, <code>elif</code>, <code>else</code>) · Bucles iterativos controlados (<code>for</code> y <code>while</code>) · Modularización con funciones (<code>def</code>) y paso de parámetros · Entorno Google Colab + librería py5 (Processing en Python).</td></tr>
+                <tr><th>Recurso Clave</th><td>Learn Python Visually – Tristan Bunn.</td></tr>
+                <tr><th>Proyecto Guía</th><td>Generador de patrones geométricos aleatorios y un mini juego interactivo de dibujo en canvas.</td></tr>
               </tbody>
             </table>
-            <p class="proportion-note">Proporcion formativa: 30% teorico / 70% practico.</p>
-
           </div>
         </div>
 
         <!-- FASE 4 -->
-        <div class="module-card" id="fase4-card">
-          <button class="module-toggle" aria-expanded="false" data-target="fase4-content">
+        <div class="module-card" id="fase4">
+          <button class="module-toggle" aria-expanded="false" data-target="c-fase4">
             <span class="module-num">Fase 4</span>
-            <span class="module-title">Python para Resolver Problemas Reales</span>
-            <span class="module-hours">52 h</span>
+            <span class="module-title">Problemas Reales y Archivos</span>
+            <span class="module-hours">30 Horas</span>
             <span class="module-chevron">+</span>
           </button>
-          <div class="module-content" id="fase4-content" hidden>
-
+          <div class="module-content" id="c-fase4" hidden>
             <table class="ficha-table">
               <tbody>
-                <tr><th>Objetivo</th><td>Aplicar Python en situaciones cotidianas antes de abordar temas avanzados.</td></tr>
-                <tr><th>Modalidad</th><td>Taller practico guiado, con un proyecto que crece semana a semana.</td></tr>
-                <tr><th>Duracion</th><td>52 horas (15 h teoricas + 37 h practicas — 29% / 71%)</td></tr>
-                <tr><th>Distribucion</th><td>9 semanas x ~6 h/semana</td></tr>
-                <tr><th>Prerrequisitos</th><td>Fases 1, 2 y 3 completas. Variables, <code>input()</code>/<code>print()</code>, condicionales, bucles, funciones con parametros y retorno.</td></tr>
-                <tr><th>Lectura puente</th><td><em>Learn Python Visually</em> (Bunn), caps. 7 y 8 — asignados al cierre de la Fase 3.</td></tr>
-                <tr><th>Herramienta</th><td>Python 3.12+ (CPython) + Visual Studio Code + terminal. Jupyter Notebook para exploracion.
-                  <br><a class="tool-btn" href="https://www.python.org/downloads/" target="_blank" rel="noopener">Descargar Python</a>
-                  <a class="tool-btn tool-btn--sec" href="https://code.visualstudio.com" target="_blank" rel="noopener">Descargar VS Code</a>
-                </td></tr>
-                <tr><th>Libro base</th><td><em>Head First Python</em>, 3.a ed. — Paul Barry (O'Reilly, 2023). Caps. 0–5.</td></tr>
-                <tr><th>Entregable final</th><td>Proyecto integrador "Cuentas Claras" — mini sistema de reporte de gastos personales.</td></tr>
-                <tr><th>Umbral</th><td>Mayor o igual al 80% de logros en estado Logrado + proyecto mayor o igual a 70/100.</td></tr>
+                <tr><th>Objetivo</th><td>Manejar colecciones de datos complejos y persistencia en ficheros locales mediante VS Code.</td></tr>
+                <tr><th>Temas Clave</th><td>Listas, tuplas y métodos de ordenamiento · Diccionarios para estructurar llaves y valores · Apertura, lectura, actualización y cierre de archivos de texto (`open()`, `with open`) · Automatización de tareas repetitivas en el sistema operativo.</td></tr>
+                <tr><th>Recurso Clave</th><td>Head First Python – Paul Barry. Entorno local VS Code.</td></tr>
+                <tr><th>Proyecto Guía</th><td>Sistema de inventario local que lee y escribe registros estructurados en un archivo de texto.</td></tr>
               </tbody>
             </table>
+          </div>
+        </div>
 
-            <h4>Temas y subtemas</h4>
-            <div class="tab-nav">
-              <button class="tab-btn is-active" data-tab="temas">Temas</button>
-              <button class="tab-btn" data-tab="proyectos">Proyectos</button>
-              <button class="tab-btn" data-tab="cronograma">Cronograma</button>
+        <!-- FASE 5 -->
+        <div class="module-card" id="fase5">
+          <button class="module-toggle" aria-expanded="false" data-target="c-fase5">
+            <span class="module-num">Fase 5</span>
+            <span class="module-title">Desarrollo Web con Django</span>
+            <span class="module-hours">40 Horas</span>
+            <span class="module-chevron">+</span>
+          </button>
+          <div class="module-content" id="c-fase5" hidden>
+            <table class="ficha-table">
+              <tbody>
+                <tr><th>Objetivo</th><td>Construir aplicaciones web robustas conectadas a bases de datos relacionales.</td></tr>
+                <tr><th>Temas Clave</th><td>Arquitectura Modelo-Vista-Template (MVT) · Configuración de proyectos y apps en Django · Enrutamiento de URLs y vistas basadas en funciones/clases · Sistema de modelos ORM y migraciones de bases de datos · Plantillas HTML con herencia y formularios seguros.</td></tr>
+                <tr><th>Recurso Clave</th><td>Documentación oficial de Django y tutoriales de la comunidad Python Colombia.</td></tr>
+                <tr><th>Proyecto Guía</th><td>Plataforma web de gestión de portafolios personales con panel de administración protegido.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- FASE 6 -->
+        <div class="module-card" id="fase6">
+          <button class="module-toggle" aria-expanded="false" data-target="c-fase6">
+            <span class="module-num">Fase 6</span>
+            <span class="module-title">Datos, APIs e Inteligencia Artificial</span>
+            <span class="module-hours">35 Horas</span>
+            <span class="module-chevron">+</span>
+          </button>
+          <div class="module-content" id="c-fase6" hidden>
+            <table class="ficha-table">
+              <tbody>
+                <tr><th>Objetivo</th><td>Interactuar con servicios externos mediante APIs y explorar bases de análisis de datos e IA.</td></tr>
+                <tr><th>Temas Clave</th><td>Consumo de servicios web REST con la librería <code>requests</code> · Manejo de estructuras JSON · Introducción a librerías de manipulación de datos (Pandas / NumPy) · Primeros pasos conceptuales en modelos de Machine Learning y Visión Computacional.</td></tr>
+                <tr><th>Recurso Clave</th><td>Guías abiertas de APIs y repositorios de Boyacá Dev.</td></tr>
+                <tr><th>Proyecto Guía</th><td>Aplicación consultora de clima o tasas de cambio conectada a una API pública en tiempo real.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- MANUAL DEL ESTUDIANTE -->
+      <section id="estudiantes" class="reveal">
+        <h2>Manual del Estudiante Exitoso</h2>
+        <p class="section-desc">Estrategias pedagógicas y hábitos recomendados por mentores de la comunidad para acelerar tu aprendizaje.</p>
+        <div class="principles-grid">
+          <div class="principle-card">
+            <h3>1. Acepta el error como tu aliado</h3>
+            <p>Un mensaje de error (Traceback) no significa que fallaste; significa que el intérprete te está dando una pista exacta de lo que necesita corregirse.</p>
+          </div>
+          <div class="principle-card">
+            <h3>2. Consistencia sobre intensidad</h3>
+            <p>Estudiar y escribir código durante 30 minutos todos los días genera un anclaje mental superior a pasar 6 horas seguidas un solo día de la semana.</p>
+          </div>
+          <div class="principle-card">
+            <h3>3. Escribe en papel primero</h3>
+            <p>Ante un problema lógico complejo, apaga el computador y diseña los pasos en un cuaderno usando pseudocódigo o diagramas sencillos.</p>
+          </div>
+          <div class="principle-card">
+            <h3>4. Comparte y pregunta en comunidad</h3>
+            <p>Ningún programador profesional trabaja aislado. Apóyate en los canales de Python Colombia y Boyacá Dev para resolver bloqueos técnicos.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- DIAGNÓSTICO DE ERRORES -->
+      <section id="errores" class="reveal">
+        <h2>Guía de Diagnóstico de Errores Comunes</h2>
+        <p class="section-desc">Aprende a leer y solucionar los errores más frecuentes que arroja la consola de Python.</p>
+        <div class="principles-grid">
+          <div class="principle-card">
+            <h3>SyntaxError</h3>
+            <p><strong>Causa:</strong> Falta un carácter clave como dos puntos (<code>:</code>), un paréntesis de cierre o comillas.<br><em>Solución:</em> Revisa la línea indicada en el reporte.</p>
+          </div>
+          <div class="principle-card">
+            <h3>IndentationError</h3>
+            <p><strong>Causa:</strong> Mal uso o mezcla de espacios y tabulaciones en la sangría del bloque de código.<br><em>Solución:</em> Usa siempre 4 espacios uniformes.</p>
+          </div>
+          <div class="principle-card">
+            <h3>NameError</h3>
+            <p><strong>Causa:</strong> Intentas usar una variable o función que aún no ha sido declarada o tiene error tipográfico.<br><em>Solución:</em> Verifica el nombre exacto.</p>
+          </div>
+          <div class="principle-card">
+            <h3>TypeError</h3>
+            <p><strong>Causa:</strong> Operación entre tipos incompatibles (ej. sumar un texto con un número entero sin convertirlo).<br><em>Solución:</em> Usa <code>str()</code> o <code>int()</code>.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- TERMINAL & GIT CHEAT SHEET -->
+      <section id="comandos" class="reveal">
+        <h2>Terminal & Git Cheat Sheet</h2>
+        <p class="section-desc">Resumen práctico con los comandos esenciales de consola y control de versiones.</p>
+        <div class="principles-grid">
+          <div class="principle-card">
+            <h3>Navegación en Consola (Bash/CMD)</h3>
+            <p>
+              <code>pwd</code> — Muestra la ruta actual.<br>
+              <code>ls</code> / <code>dir</code> — Lista archivos y carpetas.<br>
+              <code>cd nombre_carpeta</code> — Entra a un directorio.<br>
+              <code>mkdir nueva_carpeta</code> — Crea un directorio.
+            </p>
+          </div>
+          <div class="principle-card">
+            <h3>Control de Versiones (Git Básico)</h3>
+            <p>
+              <code>git init</code> — Inicializa un repositorio local.<br>
+              <code>git status</code> — Muestra archivos modificados.<br>
+              <code>git add .</code> — Prepara los cambios para guardar.<br>
+              <code>git commit -m "mensaje"</code> — Guarda la versión local.
+            </p>
+          </div>
+          <div class="principle-card">
+            <h3>Sincronización Remota (GitHub)</h3>
+            <p>
+              <code>git remote add origin URL</code> — Conecta con remoto.<br>
+              <code>git push -u origin main</code> — Sube los cambios principales.<br>
+              <code>git pull</code> — Descarga actualizaciones del servidor.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- VIDEOS EXPLICATIVOS CON ENLACES EDITABLES -->
+      <section id="videos" class="reveal video-section">
+        <h2>Videos Explicativos y Clases Grabadas</h2>
+        <p class="section-desc">Material audiovisual recomendado por la comunidad. Haz clic en los botones para abrir los enlaces.</p>
+        <div class="videos-grid">
+          <div class="video-card">
+            <div class="video-placeholder">
+              <span class="video-icon">&#9654;</span>
+              <span>Video 1</span>
             </div>
-            <div class="tab-panel is-active" data-tab="temas">
-            <div class="topics">
-              <div class="topic">
-                <div class="topic-header" aria-expanded="false"><span class="topic-num">Tema 0</span><span class="topic-name">Del sketch al script: entorno real</span><span class="topic-hours">4 h · 1.5T / 2.5P</span></div>
-                <div class="topic-body">
-                  <p>El salto mas significativo de la ruta: de la interfaz grafica de Processing a ficheros <code>.py</code> ejecutados desde la terminal.</p>
-                  <ul>
-                    <li>Instalacion Python 3.12+ y <code>python --version</code>.</li>
-                    <li>VS Code: extensiones, jerarquia de carpetas, panel de comandos.</li>
-                    <li>Modalidades: REPL, scripts <code>.py</code> y celdas de notebook. Criterios de seleccion.</li>
-                    <li>Terminal: <code>python archivo.py</code>, navegacion por rutas.</li>
-                    <li>Jupyter: Shift+Enter, persistencia de variables, gestion del kernel.</li>
-                    <li>PSL vs. PyPI; introspeccion con <code>type()</code>, <code>len()</code>, <code>dir()</code>, <code>help()</code>.</li>
-                    <li>Lectura inversa de tracebacks para localizar el fallo.</li>
-                    <li>Comentarios <code>#</code> y docstrings (PEP 257).</li>
-                  </ul>
-                  <div class="rule-box rule-box--warn"><strong>Advertencia:</strong> el obstaculo mas recurrente es la discrepancia entre la ubicacion del script y el directorio de trabajo actual. Dedicar tiempo a esto.</div>
-                </div>
-              </div>
-              <div class="topic">
-                <div class="topic-header" aria-expanded="false"><span class="topic-num">Tema 1</span><span class="topic-name">Listas y diccionarios — Big 4</span><span class="topic-hours">14 h · 4.5T / 9.5P</span></div>
-                <div class="topic-body">
-                  <p>De variables aisladas a colecciones organizadas. Criterio tecnico para seleccionar la arquitectura optima segun la naturaleza del problema.</p>
-                  <ul>
-                    <li><strong>1.1 Cadenas:</strong> <code>.split()</code>, <code>.strip()</code>, <code>.replace()</code>, <code>.lower()</code>, <code>.upper()</code>; indexacion y slicing.</li>
-                    <li><strong>1.2 Listas:</strong> <code>.append()</code>, <code>.insert()</code>, <code>.remove()</code>, <code>.pop()</code>, <code>.sort()</code>; <code>enumerate()</code>; estructuras anidadas.</li>
-                    <li><strong>1.3 Tuplas:</strong> inmutabilidad; desempaquetado; funciones con retornos multiples.</li>
-                    <li><strong>1.4 Conjuntos:</strong> <code>set()</code> para deduplicacion; intersecciones y diferencias.</li>
-                    <li><strong>1.5 Diccionarios:</strong> <code>.keys()</code>, <code>.values()</code>, <code>.items()</code>; acceso defensivo con <code>.get()</code>.</li>
-                    <li><strong>1.6 Arquitecturas compuestas:</strong> diccionarios anidados; inspeccion con <code>pprint</code>.</li>
-                    <li><strong>1.7 Criterios de seleccion:</strong> orden, mutabilidad, metodos de busqueda y duplicidad.</li>
-                  </ul>
-                  <p class="topic-ref">Head First Python, caps. 1, 2 y 5.</p>
-                </div>
-              </div>
-              <div class="topic">
-                <div class="topic-header" aria-expanded="false"><span class="topic-num">Tema 2</span><span class="topic-name">Lectura y escritura de archivos</span><span class="topic-hours">10 h · 3T / 7P</span></div>
-                <div class="topic-body">
-                  <p>Transicion a la persistencia de datos. Consumir flujos externos y generar archivos interoperables.</p>
-                  <ul>
-                    <li><strong>2.1 Lectura:</strong> <code>open()</code>, modos <code>'r'</code> <code>'w'</code> <code>'a'</code>; gestor <code>with open(...) as f:</code>.</li>
-                    <li><strong>2.2 Rutas:</strong> <code>encoding='utf-8'</code>; <code>os.path.join()</code>; rutas relativas vs. absolutas.</li>
-                    <li><strong>2.3 Salida:</strong> <code>.write()</code>; reportes desde estructuras en memoria.</li>
-                    <li><strong>2.4 F-strings:</strong> <code>{:.2f}</code>, <code>{:&gt;10}</code>, <code>{:,}</code>.</li>
-                    <li><strong>2.5 CSV/JSON:</strong> <code>csv.DictReader</code>; <code>json.load()</code> y <code>json.dump()</code>.</li>
-                    <li><strong>2.6 HTML/SVG:</strong> generacion por codigo; <code>webbrowser</code>.</li>
-                    <li><strong>2.7 Datos sucios:</strong> deteccion de inconsistencias; descarte selectivo con log.</li>
-                  </ul>
-                  <p class="topic-ref">Head First Python, caps. 2 y 4.</p>
-                </div>
-              </div>
-              <div class="topic">
-                <div class="topic-header" aria-expanded="false"><span class="topic-num">Tema 3</span><span class="topic-name">Automatizacion de tareas simples</span><span class="topic-hours">10 h · 3T / 7P</span></div>
-                <div class="topic-body">
-                  <p>"Como aplico esto en mi entorno laboral?" Automatizacion de flujos repetitivos sobre sistemas de archivos.</p>
-                  <ul>
-                    <li><strong>3.1 Modulo os:</strong> <code>os.listdir()</code>, <code>os.path.exists()</code>, <code>os.makedirs()</code>; <code>pathlib.Path</code>.</li>
-                    <li><strong>3.2 Ciclo:</strong> indexacion → filtrado → recorrido → ejecucion → acumulacion → reporte.</li>
-                    <li><strong>3.3 Seguridad:</strong> <code>shutil.copy2()</code>, <code>shutil.move()</code>; protocolo de simulacion obligatorio.</li>
-                    <li><strong>3.4 Cronologia:</strong> <code>datetime.now()</code> y <code>.strftime()</code> para marcas temporales.</li>
-                    <li><strong>3.5 Registro:</strong> <code>registro.txt</code> acumulativo con fecha, aciertos y omisiones.</li>
-                    <li><strong>3.6 PSL:</strong> <code>glob</code>, <code>random</code>, <code>time.sleep()</code>, <code>webbrowser</code>.</li>
-                    <li><strong>3.7 Etica:</strong> priorizar duplicados; proteccion de datos sensibles.</li>
-                  </ul>
-                  <p class="topic-ref">Head First Python, cap. 3 + modulos de la PSL.</p>
-                </div>
-              </div>
-              <div class="topic">
-                <div class="topic-header" aria-expanded="false"><span class="topic-num">Tema 4</span><span class="topic-name">Organizacion del codigo</span><span class="topic-hours">8 h · 2.5T / 5.5P</span></div>
-                <div class="topic-body">
-                  <p>De script funcional a arquitectura de proyecto profesional que cualquier colaborador puede interpretar y mantener.</p>
-                  <ul>
-                    <li><strong>4.1 Modularizacion:</strong> principio DRY; <code>def</code>, responsabilidad unica.</li>
-                    <li><strong>4.2 Modulos externos:</strong> <code>import</code>; nombres cualificados; alias; <code>__pycache__</code>.</li>
-                    <li><strong>4.3 Arquitectura:</strong> carpetas <code>src/</code>, <code>datos/</code>, <code>salida/</code>; <code>if __name__ == "__main__":</code>.</li>
-                    <li><strong>4.4 PEP 8:</strong> 4 espacios, <code>snake_case</code>, docstrings (PEP 257).</li>
-                    <li><strong>4.5 README:</strong> requisitos, ejecucion y resultados esperados.</li>
-                    <li><strong>4.6 Git:</strong> flujo basico, <code>.gitignore</code>, publicacion como bonificacion.</li>
-                  </ul>
-                  <p class="topic-ref">Head First Python, cap. 3.</p>
-                </div>
-              </div>
-            </div><!-- /topics -->
-            </div><!-- /tab-panel temas -->
-
-            <div class="tab-panel" data-tab="proyectos">
-            <div class="final-challenge">
-              <h4>Proyecto integrador: "Cuentas Claras"</h4>
-              <p>Mini sistema de reporte de gastos personales. Una persona exporta sus movimientos en CSV por mes. Al final del trimestre quiere: informe legible, grafico de barras por categoria, archivo reutilizable. Solo Python + Biblioteca Estandar.</p>
-              <p><strong>Datos:</strong> carpeta <code>datos/</code> con <code>gastos_2026-01.csv</code>, <code>gastos_2026-02.csv</code>, <code>gastos_2026-03.csv</code>; columnas <code>fecha, categoria, descripcion, monto</code>.</p>
-              <p><strong>Duracion:</strong> 6 h de taller final + trabajo incremental durante el modulo.</p>
-              <div class="promotion-box"><strong>Prueba de fuego:</strong> el dia de cierre cada participante recibe datos desconocidos — mes adicional, categoria nueva, 3 defectos nuevos — y tiene 10 minutos para procesarlos. Un proyecto que solo funciona con sus propios datos no esta terminado.</div>
+            <div class="video-info">
+              <h3>Fundamentos de Deep Learning</h3>
+              <p>Introducción conceptual aplicada a la visión computacional y modelos base explicados por expertos.</p>
+              <br>
+              <a href="short-tema2-final.mp4" target="_blank" rel="noopener" class="repo-link">Ver Vídeo en Explicativo</a>
             </div>
-            </div><!-- /tab-panel proyectos -->
-
-            <div class="tab-panel" data-tab="cronograma">
-            <h4>Cronograma Fase 4 (9 semanas)</h4>
-            <table class="data-table">
-              <thead><tr><th>Semana</th><th>Contenido</th><th>Lectura</th><th>Entrega</th></tr></thead>
-              <tbody>
-                <tr><td>1</td><td>Tema 0 + apertura Tema 1 (cadenas)</td><td>HFP cap. 0</td><td>P0.1</td></tr>
-                <tr><td>2</td><td>Tema 1: listas, sort/sorted, enumerate</td><td>HFP caps. 1–2</td><td>P1.1</td></tr>
-                <tr><td>3</td><td>Tema 1: tuplas, conjuntos, diccionarios</td><td>HFP cap. 5</td><td>P1.2 y P1.3</td></tr>
-                <tr><td>4</td><td>Tema 2: lectura, rutas, escritura, f-strings</td><td>HFP cap. 2</td><td>P2.1</td></tr>
-                <tr><td>5</td><td>Tema 2: CSV, JSON, HTML/SVG, datos sucios</td><td>HFP cap. 4</td><td>P2.2</td></tr>
-                <tr><td>6</td><td>Tema 3: modulo os, automatizacion, pathlib</td><td>HFP cap. 3</td><td>P3.1</td></tr>
-                <tr><td>7</td><td>Tema 3: simulacion, fechas, registro</td><td>HFP cap. 3</td><td>P3.2 y P3.3</td></tr>
-                <tr><td>8</td><td>Tema 4: funciones, modulos, PEP 8, Git</td><td>HFP cap. 3 + PEP 8</td><td>P4.1 y P4.2</td></tr>
-                <tr><td>9</td><td>Taller de cierre: integrador + prueba de fuego</td><td>—</td><td>Cuentas Claras</td></tr>
-              </tbody>
-            </table>
-            </div><!-- /tab-panel cronograma -->
-
-            <h4>Distribucion de horas</h4>
-            <table class="data-table">
-              <thead><tr><th>Tema</th><th>Teoria</th><th>Practica</th><th>Total</th><th>%</th></tr></thead>
-              <tbody>
-                <tr><td>0. Entorno de trabajo real</td><td>1.5</td><td>2.5</td><td>4.0</td><td>7.7%</td></tr>
-                <tr><td>1. Listas y diccionarios</td><td>4.5</td><td>9.5</td><td>14.0</td><td>26.9%</td></tr>
-                <tr><td>2. Lectura y escritura de archivos</td><td>3.0</td><td>7.0</td><td>10.0</td><td>19.2%</td></tr>
-                <tr><td>3. Automatizacion de tareas</td><td>3.0</td><td>7.0</td><td>10.0</td><td>19.2%</td></tr>
-                <tr><td>4. Organizacion del codigo</td><td>2.5</td><td>5.5</td><td>8.0</td><td>15.4%</td></tr>
-                <tr><td>Proyecto integrador y cierre</td><td>0.5</td><td>5.5</td><td>6.0</td><td>11.5%</td></tr>
-                <tr class="total-row"><td>Total</td><td>15.0</td><td>37.0</td><td>52.0</td><td>100%</td></tr>
-              </tbody>
-            </table>
-            <p class="proportion-note">Relacion teoria / practica: 29% / 71%.</p>
-
+          </div>
+          <div class="video-card">
+            <div class="video-placeholder">
+              <span class="video-icon">&#9654;</span>
+              <span>Video 2</span>
+            </div>
+            <div class="video-info">
+              <h3>Fundamentos de Computer Vision</h3>
+              <p>Procesamiento de imágenes, matrices y reconocimiento de patrones utilizando Python y OpenCV.</p>
+              <br>
+              <a href="short-tema3-final.mp4" target="_blank" rel="noopener" class="repo-link">Ver Vídeo Explicativo</a>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- TABLA PY5 / PROCESSING -->
-      <section id="py5tabla" class="reveal">
-        <h2>Tabla py5 / Processing</h2>
-        <p class="section-desc">
-          py5 usa <code>snake_case</code> donde el libro <em>Learn Python Visually</em> usa <code>camelCase</code>.
-          Esta tabla debe estar visible durante toda la Fase 3. Consulta diaria obligatoria.
-        </p>
-        <div class="py5-grid">
-          <div class="py5-col">
-            <h3>Dibujo y formas</h3>
-            <table class="data-table">
-              <thead><tr><th>Processing (camelCase)</th><th>py5 (snake_case)</th></tr></thead>
-              <tbody>
-                <tr><td><code>noStroke()</code></td><td><code>no_stroke()</code></td></tr>
-                <tr><td><code>noFill()</code></td><td><code>no_fill()</code></td></tr>
-                <tr><td><code>strokeWeight(w)</code></td><td><code>stroke_weight(w)</code></td></tr>
-                <tr><td><code>rectMode(m)</code></td><td><code>rect_mode(m)</code></td></tr>
-                <tr><td><code>ellipseMode(m)</code></td><td><code>ellipse_mode(m)</code></td></tr>
-                <tr><td><code>beginShape()</code></td><td><code>begin_shape()</code></td></tr>
-                <tr><td><code>endShape()</code></td><td><code>end_shape()</code></td></tr>
-                <tr><td><code>beginContour()</code></td><td><code>begin_contour()</code></td></tr>
-                <tr><td><code>endContour()</code></td><td><code>end_contour()</code></td></tr>
-              </tbody>
-            </table>
+      <!-- ENLACES Y RECURSOS -->
+      <section id="enlaces" class="reveal">
+        <h2>Enlaces y Recursos Abiertos</h2>
+        <p class="section-desc">Todos los enlaces, herramientas, libros y repositorios compartidos en las mesas de trabajo de la comunidad.</p>
+        <div class="resources-grid" style="display:grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.25rem;">
+          <div class="principle-card">
+            <h3>Roadmap Oficial Python</h3>
+            <p><a href="https://roadmap.sh/python" target="_blank" rel="noopener">roadmap.sh/python</a><br><small>Guía de referencia global de tecnologías.</small></p>
           </div>
-          <div class="py5-col">
-            <h3>Transformaciones</h3>
-            <table class="data-table">
-              <thead><tr><th>Processing (camelCase)</th><th>py5 (snake_case)</th></tr></thead>
-              <tbody>
-                <tr><td><code>pushMatrix()</code></td><td><code>push_matrix()</code></td></tr>
-                <tr><td><code>popMatrix()</code></td><td><code>pop_matrix()</code></td></tr>
-                <tr><td><code>pushStyle()</code></td><td><code>push_style()</code></td></tr>
-                <tr><td><code>popStyle()</code></td><td><code>pop_style()</code></td></tr>
-                <tr><td><code>resetMatrix()</code></td><td><code>reset_matrix()</code></td></tr>
-                <tr><td><code>applyMatrix()</code></td><td><code>apply_matrix()</code></td></tr>
-              </tbody>
-            </table>
+          <div class="principle-card">
+            <h3>Domador de Serpientes</h3>
+            <p><a href="https://theswissbay.ch/pdf/Gentoomen%20Library/Programming/Python/Snake%20Wrangling%20for%20Kids%20-%20Learning%20to%20Program%20with%20Python%202%2C%20win-v0.7.2%20%282007%29.pdf" target="_blank" rel="noopener">Snake Wrangling for Kids (PDF)</a><br><small>Libro infantil clásico de iniciación.</small></p>
           </div>
-          <div class="py5-col">
-            <h3>Color y texto</h3>
-            <table class="data-table">
-              <thead><tr><th>Processing (camelCase)</th><th>py5 (snake_case)</th></tr></thead>
-              <tbody>
-                <tr><td><code>colorMode(m)</code></td><td><code>color_mode(m)</code></td></tr>
-                <tr><td><code>lerpColor(a,b,t)</code></td><td><code>lerp_color(a,b,t)</code></td></tr>
-                <tr><td><code>textSize(s)</code></td><td><code>text_size(s)</code></td></tr>
-                <tr><td><code>textAlign(a)</code></td><td><code>text_align(a)</code></td></tr>
-                <tr><td><code>textFont(f)</code></td><td><code>text_font(f)</code></td></tr>
-                <tr><td><code>createFont(n,s)</code></td><td><code>create_font(n,s)</code></td></tr>
-              </tbody>
-            </table>
+          <div class="principle-card">
+            <h3>Learn Python Visually</h3>
+            <p><a href="https://edu.anarcho-copy.org/Programming%20Languages/Python/LearnPythonVisually.pdf" target="_blank" rel="noopener">Learn Python Visually (PDF)</a><br><small>Guía gráfica excelente con Processing/py5.</small></p>
           </div>
-          <div class="py5-col">
-            <h3>Animacion e interaccion</h3>
-            <table class="data-table">
-              <thead><tr><th>Processing (camelCase)</th><th>py5 (snake_case)</th></tr></thead>
-              <tbody>
-                <tr><td><code>frameRate(n)</code></td><td><code>frame_rate(n)</code></td></tr>
-                <tr><td><code>frameCount</code></td><td><code>frame_count</code></td></tr>
-                <tr><td><code>mousePressed()</code></td><td><code>mouse_pressed()</code></td></tr>
-                <tr><td><code>keyPressed()</code></td><td><code>key_pressed()</code></td></tr>
-                <tr><td><code>mouseX / mouseY</code></td><td><code>mouse_x / mouse_y</code></td></tr>
-                <tr><td><code>saveFrame(f)</code></td><td><code>save_frame(f)</code></td></tr>
-                <tr><td><code>randomSeed(n)</code></td><td><code>random_seed(n)</code></td></tr>
-              </tbody>
-            </table>
+          <div class="principle-card">
+            <h3>Head First Python</h3>
+            <p><a href="https://theswissbay.ch/pdf/Gentoomen%20Library/Programming/Python/Head%20First%20Python%2C%20First%20Edition%20%282010%29.pdf" target="_blank" rel="noopener">Head First Python (PDF)</a><br><small>Edición inicial ideal para conceptos de datos.</small></p>
           </div>
-        </div>
-        <div class="rule-box rule-box--info">
-          <strong>Nota:</strong> las funciones geometricas basicas como <code>rect()</code>, <code>ellipse()</code>, <code>line()</code>, <code>fill()</code>, <code>stroke()</code>, <code>background()</code>, <code>size()</code>, <code>translate()</code>, <code>rotate()</code>, <code>scale()</code>, <code>sin()</code>, <code>cos()</code>, <code>map()</code>, <code>dist()</code> y <code>random()</code> son identicas en ambos entornos.
-        </div>
-      </section>
-
-      <!-- REPOS DEL TRACK -->
-      <section id="repos" class="reveal">
-        <h2>Repos del track</h2>
-        <p class="section-desc">Cada modulo de la ruta vive en su propio repositorio. Esta guia se actualiza a medida que se suman.</p>
-        <div class="repos-grid">
-          <div class="repo-card repo-card--available">
-            <div class="repo-header"><span class="repo-phase">Fase 3</span><span class="repo-status">Disponible</span></div>
-            <h3>Programacion-Visual-Creativa</h3>
-            <p>Sketches con py5 y Processing, patrones generativos y proyectos de animacion interactiva.</p>
-            <span class="repo-link repo-link--disabled" title="Agrega el link cuando el repo este publicado">enlace pendiente</span>
+          <div class="principle-card">
+            <h3>Cartoon Guide to CS</h3>
+            <p><a href="https://ia801507.us.archive.org/24/items/TheCartoonGuideToComputerScience/LarryGonick-CartoonBookOnComputers.pdf" target="_blank" rel="noopener">Cartoon Guide (PDF)</a><br><small>Fundamentos computacionales ilustrados.</small></p>
           </div>
-          <div class="repo-card repo-card--next">
-            <div class="repo-header"><span class="repo-phase">Fase 4</span><span class="repo-status">Proximo</span></div>
-            <h3>Python-Problemas-Reales</h3>
-            <p>Scripts, automatizacion de archivos y proyecto integrador "Cuentas Claras".</p>
-            <span class="repo-link repo-link--disabled">proximamente</span>
+          <div class="principle-card">
+            <h3>Libros Gratis Programación</h3>
+            <p><a href="https://github.com/midudev/libros-programacion-gratis" target="_blank" rel="noopener">Repositorio Midudev GitHub</a><br><small>Gran repertorio de literatura tech gratuita.</small></p>
           </div>
-          <div class="repo-card repo-card--future">
-            <div class="repo-header"><span class="repo-phase">Fase 5</span><span class="repo-status">Por definir</span></div>
-            <h3 class="phase-placeholder">Por definir</h3>
-            <p class="phase-placeholder-desc">Se agregara al cierre de la Fase 4.</p>
+          <div class="principle-card">
+            <h3>AvanzaTec MinTIC</h3>
+            <p><a href="https://www.avanzatec.gov.co/portal/" target="_blank" rel="noopener">Portal AvanzaTec Colombia</a><br><small>Capacitaciones y becas de formación técnica.</small></p>
           </div>
-          <div class="repo-card repo-card--future">
-            <div class="repo-header"><span class="repo-phase">Fase 6</span><span class="repo-status">Por definir</span></div>
-            <h3 class="phase-placeholder">Por definir</h3>
-            <p class="phase-placeholder-desc">Se agregara al cierre de la Fase 5.</p>
+          <div class="principle-card">
+            <h3>Learn Git Branching</h3>
+            <p><a href="https://learngitbranching.js.org/?locale=es_AR" target="_blank" rel="noopener">learngitbranching.js.org</a><br><small>Entorno interactivo para dominar ramas de Git.</small></p>
           </div>
         </div>
       </section>
 
-      <!-- RECURSOS -->
-      <section id="recursos" class="reveal">
-        <h2>Recursos mapeados</h2>
-        <div class="resources-grid">
-          <div class="resource-group">
-            <h3>Libros base</h3>
-            <ul>
-              <li><strong>Learn Python Visually</strong> — Tristan Bunn (No Starch Press, 2021). <span class="resource-tag">Fase 3</span><br><small>Caps. 1–3 (fundamentos), 4 (condicional), 5 (iteracion), 6 (animacion), 9 (modularidad), 11 (interaccion).</small></li>
-              <li><strong>Head First Python</strong>, 3.a ed. — Paul Barry (O'Reilly, 2023). <span class="resource-tag">Fase 4</span><br><small>Caps. 0–5. ISBN 978-1-492-05129-9. <a href="https://github.com/headfirstpython/third" target="_blank" rel="noopener">Repo oficial del libro</a>.</small></li>
-            </ul>
+      <!-- PREGUNTAS FRECUENTES (FAQ) -->
+      <section id="faq" class="reveal">
+        <h2>Preguntas Frecuentes (FAQ)</h2>
+        <p class="section-desc">Respuestas rápidas a las dudas comunes de quienes inician en la comunidad.</p>
+        <div class="principles-grid">
+          <div class="principle-card">
+            <h3>¿Necesito saber matemáticas avanzadas?</h3>
+            <p>No. Para la gran mayoría de aplicaciones de Python y automatización solo requieres lógica básica y operaciones aritméticas elementales.</p>
           </div>
-          <div class="resource-group">
-            <h3>Libros complementarios</h3>
-            <ul>
-              <li><strong>Automate the Boring Stuff</strong>, 2.a ed. — Al Sweigart. Caps. 9–13. <a href="https://automatetheboringstuff.com" target="_blank" rel="noopener">Gratis en linea</a>. <span class="resource-tag">Fase 4</span></li>
-              <li><strong>Python Crash Course</strong>, 3.a ed. — Eric Matthes. Caps. 3–6 y 10. <span class="resource-tag">Fase 4</span></li>
-              <li><strong>Think Python</strong>, 3.a ed. — Allen B. Downey. <a href="https://allendowney.github.io/ThinkPython/" target="_blank" rel="noopener">Gratis en linea</a>. <span class="resource-tag">Fase 4</span></li>
-              <li><strong>Learning Processing</strong> — Shiffman, D. (2015). Refuerzo en bucles y estructuras logicas. <span class="resource-tag">Fase 3</span></li>
-              <li><strong>The Nature of Code</strong> — Shiffman, D. (2012). Simulacion y fuerzas fisicas. <span class="resource-tag">Fase 3</span></li>
-              <li><strong>Generative Art</strong> — Pearson, M. (2011). Aleatoriedad y patrones. <span class="resource-tag">Fase 3</span></li>
-              <li><strong>Clean Code</strong> (selectivo) — R.C. Martin. Solo caps. 2–3 para apoyo del Tema 4. <span class="resource-tag">Fase 4</span></li>
-            </ul>
+          <div class="principle-card">
+            <h3>¿Qué computador necesito?</h3>
+            <p>Cualquier equipo actual (incluso de gama baja o con 4GB de RAM) que tenga acceso a un navegador web e internet es suficiente gracias a herramientas como Google Colab.</p>
           </div>
-          <div class="resource-group">
-            <h3>Recursos de practica</h3>
-            <ul>
-              <li><a href="https://realpython.com" target="_blank" rel="noopener"><strong>Real Python</strong></a> — Tutoriales de diccionarios, archivos y f-strings. <span class="resource-tag">Fase 4</span></li>
-              <li><a href="https://exercism.org/tracks/python" target="_blank" rel="noopener"><strong>Exercism — pista Python</strong></a> — Ejercicios con retroalimentacion humana. <span class="resource-tag">Fase 4</span></li>
-              <li><a href="https://pythontutor.com" target="_blank" rel="noopener"><strong>Python Tutor</strong></a> — Visualiza paso a paso que ocurre en memoria con listas y diccionarios. Especialmente valioso para el Tema 1. <span class="resource-tag">Fase 4</span></li>
-              <li><a href="https://cs50.harvard.edu/python/" target="_blank" rel="noopener"><strong>CS50P — Harvard</strong></a> — Problem sets de archivos y estructuras de datos. <span class="resource-tag">Fase 4</span></li>
-              <li><a href="https://openprocessing.org" target="_blank" rel="noopener"><strong>OpenProcessing</strong></a> — Galeria interactiva para inspiracion del proyecto integrador. <span class="resource-tag">Fase 3</span></li>
-              <li><strong>The Coding Train</strong> (Daniel Shiffman) — Arte generativo y funciones en video. <span class="resource-tag">Fase 3</span></li>
-            </ul>
-          </div>
-          <div class="resource-group">
-            <h3>Documentacion Processing</h3>
-            <ul>
-              <li><a href="https://py.processing.org/reference/" target="_blank" rel="noopener">Referencia Processing.py</a> — Consulta diaria obligatoria.</li>
-              <li><a href="https://py.processing.org/tutorials/" target="_blank" rel="noopener">Tutoriales Processing.py</a> — Refuerzo temas 1, 3 y 5.</li>
-              <li><a href="https://processing.org/reference/" target="_blank" rel="noopener">Referencia Processing Java</a> — Descripciones conceptuales extensas.</li>
-              <li><a href="https://processing.org/download" target="_blank" rel="noopener">Descarga del entorno Processing</a> — Preparacion operativa Tema 0.</li>
-            </ul>
+          <div class="principle-card">
+            <h3>¿Cómo participo en los encuentros?</h3>
+            <p>La comunidad organiza sesiones abiertas a través de Python Colombia y Boyacá Dev con reuniones periódicas y mentorías colaborativas.</p>
           </div>
         </div>
       </section>
 
-      <!-- DOCUMENTACION OFICIAL FASE 4 -->
-      <section id="docs-oficiales" class="reveal">
-        <h2>Documentacion oficial — Fase 4</h2>
-        <p class="section-desc">
-          Se enseña explicitamente a consultarla; es un logro transversal del modulo.
-          El objetivo no es memorizar, es saber donde buscar.
-        </p>
-        <div class="docs-grid">
-          <div class="doc-group">
-            <h3>Tutorial y libreria estandar</h3>
-            <table class="data-table">
-              <thead><tr><th>Recurso</th><th>URL</th><th>Uso</th></tr></thead>
-              <tbody>
-                <tr><td>Tutorial oficial Python (secc. 5, 7 y 10)</td><td><a href="https://docs.python.org/es/3/tutorial/" target="_blank" rel="noopener">docs.python.org/es/3/tutorial/</a></td><td>Fase 4 completa</td></tr>
-                <tr><td>Indice de la Biblioteca Estandar</td><td><a href="https://docs.python.org/3/library/index.html" target="_blank" rel="noopener">docs.python.org/3/library/</a></td><td>Referencia general</td></tr>
-                <tr><td>Estructuras de datos (tutorial)</td><td><a href="https://docs.python.org/es/3/tutorial/datastructures.html" target="_blank" rel="noopener">...tutorial/datastructures</a></td><td>Tema 1</td></tr>
-                <tr><td>Entrada y salida, <code>with open</code></td><td><a href="https://docs.python.org/es/3/tutorial/inputoutput.html" target="_blank" rel="noopener">...tutorial/inputoutput</a></td><td>Tema 2</td></tr>
-                <tr><td>Modulo <code>csv</code></td><td><a href="https://docs.python.org/3/library/csv.html" target="_blank" rel="noopener">docs.python.org/3/library/csv</a></td><td>Tema 2</td></tr>
-                <tr><td>Modulo <code>json</code></td><td><a href="https://docs.python.org/3/library/json.html" target="_blank" rel="noopener">docs.python.org/3/library/json</a></td><td>Tema 2</td></tr>
-                <tr><td>Modulo <code>os</code> y <code>os.path</code></td><td><a href="https://docs.python.org/3/library/os.html" target="_blank" rel="noopener">docs.python.org/3/library/os</a></td><td>Tema 3</td></tr>
-                <tr><td>Modulo <code>pathlib</code></td><td><a href="https://docs.python.org/3/library/pathlib.html" target="_blank" rel="noopener">docs.python.org/3/library/pathlib</a></td><td>Tema 3</td></tr>
-                <tr><td>Modulo <code>shutil</code></td><td><a href="https://docs.python.org/3/library/shutil.html" target="_blank" rel="noopener">docs.python.org/3/library/shutil</a></td><td>Tema 3</td></tr>
-                <tr><td>Modulo <code>datetime</code></td><td><a href="https://docs.python.org/3/library/datetime.html" target="_blank" rel="noopener">docs.python.org/3/library/datetime</a></td><td>Tema 3</td></tr>
-                <tr><td>Modulo <code>glob</code></td><td><a href="https://docs.python.org/3/library/glob.html" target="_blank" rel="noopener">docs.python.org/3/library/glob</a></td><td>Tema 3</td></tr>
-                <tr><td>Modulo <code>webbrowser</code></td><td><a href="https://docs.python.org/3/library/webbrowser.html" target="_blank" rel="noopener">docs.python.org/3/library/webbrowser</a></td><td>Temas 2 y 3</td></tr>
-                <tr><td>Modulo <code>pprint</code></td><td><a href="https://docs.python.org/3/library/pprint.html" target="_blank" rel="noopener">docs.python.org/3/library/pprint</a></td><td>Tema 1</td></tr>
-                <tr><td>Funciones integradas (BIF)</td><td><a href="https://docs.python.org/3/library/functions.html" target="_blank" rel="noopener">docs.python.org/3/library/functions</a></td><td>Transversal</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="doc-group">
-            <h3>Estandares y herramientas</h3>
-            <table class="data-table">
-              <thead><tr><th>Recurso</th><th>URL</th><th>Uso</th></tr></thead>
-              <tbody>
-                <tr><td>PEP 8 — Guia de estilo</td><td><a href="https://peps.python.org/pep-0008/" target="_blank" rel="noopener">peps.python.org/pep-0008/</a></td><td>Tema 4</td></tr>
-                <tr><td>PEP 257 — Docstrings</td><td><a href="https://peps.python.org/pep-0257/" target="_blank" rel="noopener">peps.python.org/pep-0257/</a></td><td>Tema 4</td></tr>
-                <tr><td>The Zen of Python (PEP 20)</td><td><a href="https://peps.python.org/pep-0020/" target="_blank" rel="noopener">peps.python.org/pep-0020/</a></td><td>Transversal</td></tr>
-                <tr><td>Python Package Index (PyPI)</td><td><a href="https://pypi.org" target="_blank" rel="noopener">pypi.org</a></td><td>Tema 0</td></tr>
-                <tr><td>Python en VS Code</td><td><a href="https://code.visualstudio.com/docs/languages/python" target="_blank" rel="noopener">code.visualstudio.com/.../python</a></td><td>Tema 0</td></tr>
-                <tr><td>Jupyter Notebooks en VS Code</td><td><a href="https://code.visualstudio.com/docs/datascience/jupyter-notebooks" target="_blank" rel="noopener">code.visualstudio.com/.../jupyter</a></td><td>Tema 0</td></tr>
-                <tr><td>Documentacion de Git</td><td><a href="https://git-scm.com/doc" target="_blank" rel="noopener">git-scm.com/doc</a></td><td>Tema 4</td></tr>
-                <tr><td>Referencia SVG (MDN)</td><td><a href="https://developer.mozilla.org/es/docs/Web/SVG" target="_blank" rel="noopener">developer.mozilla.org/.../SVG</a></td><td>Tema 2</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      <!-- PRACTICA -->
-      <section id="practica" class="reveal">
-        <h2>Recursos de practica</h2>
-        <p class="section-desc">Plataformas y herramientas para reforzar lo aprendido fuera de las sesiones.</p>
-        <div class="practice-grid">
-          <a class="practice-card" href="https://realpython.com" target="_blank" rel="noopener">
-            <div class="practice-name">Real Python</div>
-            <div class="practice-desc">Tutoriales de diccionarios, archivos y f-strings. Enfoque practico con ejemplos reales.</div>
-            <div class="practice-tag">Fase 4</div>
-          </a>
-          <a class="practice-card" href="https://exercism.org/tracks/python" target="_blank" rel="noopener">
-            <div class="practice-name">Exercism — pista Python</div>
-            <div class="practice-desc">Ejercicios con retroalimentacion humana de mentores. El mejor lugar para recibir critica real de codigo.</div>
-            <div class="practice-tag">Fase 4</div>
-          </a>
-          <a class="practice-card" href="https://pythontutor.com" target="_blank" rel="noopener">
-            <div class="practice-name">Python Tutor</div>
-            <div class="practice-desc">Visualiza paso a paso que ocurre en memoria con listas y diccionarios. Especialmente valioso para el Tema 1.</div>
-            <div class="practice-tag">Fase 4 — Tema 1</div>
-          </a>
-          <a class="practice-card" href="https://cs50.harvard.edu/python/" target="_blank" rel="noopener">
-            <div class="practice-name">CS50P — Harvard</div>
-            <div class="practice-desc">Problem sets de archivos y estructuras de datos. Rigor academico gratuito.</div>
-            <div class="practice-tag">Fase 4</div>
-          </a>
-          <a class="practice-card" href="https://openprocessing.org" target="_blank" rel="noopener">
-            <div class="practice-name">OpenProcessing</div>
-            <div class="practice-desc">Galeria interactiva para inspiracion del proyecto integrador de Fase 3.</div>
-            <div class="practice-tag">Fase 3</div>
-          </a>
-          <a class="practice-card" href="https://thecodingtrain.com" target="_blank" rel="noopener">
-            <div class="practice-name">The Coding Train</div>
-            <div class="practice-desc">Daniel Shiffman: contenido audiovisual sobre arte generativo, funciones y Processing.</div>
-            <div class="practice-tag">Fase 3</div>
-          </a>
-        </div>
-      </section>
-
-      <!-- HITOS CLAVE -->
-      <section id="hitos" class="reveal">
-        <h2>Hitos clave del programa</h2>
-        <p class="section-desc">El facilitador registra el estado como Logrado, En proceso o No logrado. No se avanza de fase si el cumplimiento es inferior al umbral establecido.</p>
-        <div class="milestones">
-          <div class="milestone">
-            <span class="milestone-phase">Fase 3 — Cierre</span>
-            <p>Entrega del ecosistema interactivo + sustentacion verbal de 5 minutos ante la audiencia.</p>
-          </div>
-          <div class="milestone">
-            <span class="milestone-phase">Transicion 3 → 4</span>
-            <p>Lectura obligatoria de caps. 7 y 8 de <em>Learn Python Visually</em>. Instalacion y validacion del entorno Python nativo.</p>
-          </div>
-          <div class="milestone">
-            <span class="milestone-phase">Fase 4 — Semana 5</span>
-            <p>Entrega P2.2 (depuracion de fuentes corruptas). Punto de control de estructura de proyecto.</p>
-          </div>
-          <div class="milestone">
-            <span class="milestone-phase">Fase 4 — Cierre</span>
-            <p>Prueba de fuego con datos desconocidos + entrega final "Cuentas Claras" + sustentacion oral de 5 minutos.</p>
-          </div>
-          <div class="milestone milestone--empty"><span class="milestone-phase">Fase 5 —</span><p>Se definira al cierre de la Fase 4.</p></div>
-          <div class="milestone milestone--empty"><span class="milestone-phase">Fase 6 —</span><p>Se definira al cierre de la Fase 5.</p></div>
-        </div>
-      </section>
-
-      <!-- CHECKLIST PERSONAL -->
+      <!-- CHECKLIST PERSONAL EXTENDIDO (+30 HITOS) -->
       <section id="checklist" class="reveal">
-        <h2>Checklist personal de progresion</h2>
-        <p class="section-desc">
-          Marca cada item exclusivamente cuando logres ejecutar la tarea sin recurrir a material externo.
-          El progreso se guarda en tu navegador automaticamente.
-          Esta herramienta funciona como un tablero de control personal, no como nota punitiva.
-        </p>
+        <h2>Checklist Personal de Avance (+30 Hitos)</h2>
+        <p class="section-desc">Marca tus logros conforme avanzas en los módulos y guarda tu progreso automáticamente en tu navegador.</p>
         <div class="checklist-toolbar">
-          <button id="cl-reset" class="cl-reset-btn">Reiniciar todo</button>
-          <span class="cl-global-count" id="cl-global-count">0 / 70 completados</span>
+          <span class="cl-global-count" id="cl-global-count">0 / 30 completados</span>
+          <button class="cl-reset-btn" id="cl-reset">Reiniciar Progreso</button>
         </div>
-
         <div class="checklist-blocks">
-
-          <div class="cl-block">
+          <!-- Bloque 1 -->
+          <div class="cl-block" id="block-b1">
             <div class="cl-block-header">
-              <span class="cl-block-title">Bloque 0 — Gestion del Entorno</span>
-              <span class="cl-block-count" id="count-b0">0 / 7</span>
+              <span class="cl-block-title">Fase 1: Pensamiento Computacional</span>
+              <span class="cl-block-count" id="count-b1">0 / 5</span>
             </div>
-            <ul class="cl-list" id="block-b0">
-              <li><label><input type="checkbox" data-block="b0"> Reconocimiento de la version instalada de Python mediante comandos de sistema.</label></li>
-              <li><label><input type="checkbox" data-block="b0"> Ejecucion autonoma de scripts <code>.py</code> a traves de la terminal de comandos.</label></li>
-              <li><label><input type="checkbox" data-block="b0"> Navegacion por el sistema de archivos y gestion de rutas en la interfaz de consola.</label></li>
-              <li><label><input type="checkbox" data-block="b0"> Criterio tecnico para la seleccion entre cuadernos de trabajo y scripts estaticos.</label></li>
-              <li><label><input type="checkbox" data-block="b0"> Interpretacion analitica de tracebacks para localizar el origen y tipo de fallo.</label></li>
-              <li><label><input type="checkbox" data-block="b0"> Diferenciacion operativa entre la Biblioteca Estandar (PSL) y paquetes externos en PyPI.</label></li>
-              <li><label><input type="checkbox" data-block="b0"> Aplicacion de <code>type()</code>, <code>len()</code> y <code>help()</code> para la introspeccion de objetos.</label></li>
+            <ul class="cl-list">
+              <li><label><input type="checkbox"> Comprender qué es un algoritmo y su estructura lógica.</label></li>
+              <li><label><input type="checkbox"> Analizar cómo procesa información una computadora.</label></li>
+              <li><label><input type="checkbox"> Identificar el modelo secuencial Entrada → Proceso → Salida.</label></li>
+              <li><label><input type="checkbox"> Diseñar un algoritmo humano para un proceso cotidiano.</label></li>
+              <li><label><input type="checkbox"> Descomponer un problema complejo en subpartes manejables.</label></li>
             </ul>
           </div>
 
-          <div class="cl-block">
+          <!-- Bloque 2 -->
+          <div class="cl-block" id="block-b2">
             <div class="cl-block-header">
-              <span class="cl-block-title">Bloque 1 — Listas y Diccionarios</span>
-              <span class="cl-block-count" id="count-b1">0 / 17</span>
+              <span class="cl-block-title">Fase 2: Primeros Pasos con Python</span>
+              <span class="cl-block-count" id="count-b2">0 / 5</span>
             </div>
-            <ul class="cl-list" id="block-b1">
-              <li><label><input type="checkbox" data-block="b1"> Segmentacion y saneamiento de cadenas mediante <code>.split()</code> y <code>.strip()</code>.</label></li>
-              <li><label><input type="checkbox" data-block="b1"> Acceso a elementos y subsecciones de cadenas mediante indexacion y slicing.</label></li>
-              <li><label><input type="checkbox" data-block="b1"> Gestion de colecciones dinamicas empleando el metodo <code>.append()</code>.</label></li>
-              <li><label><input type="checkbox" data-block="b1"> Dominio de la iteracion con <code>for</code> y seguimiento de indices con <code>enumerate()</code>.</label></li>
-              <li><label><input type="checkbox" data-block="b1"> Identificacion del impacto tecnico entre el reordenamiento in-place (<code>.sort</code>) y la generacion de copias (<code>sorted</code>).</label></li>
-              <li><label><input type="checkbox" data-block="b1"> Eliminacion de registros con <code>.remove()</code> y comprension de la mutabilidad de la lista.</label></li>
-              <li><label><input type="checkbox" data-block="b1"> Validacion de pertenencia en colecciones mediante el operador logico <code>in</code>.</label></li>
-              <li><label><input type="checkbox" data-block="b1"> Definicion conceptual de la inmutabilidad en estructuras de tipo tupla.</label></li>
-              <li><label><input type="checkbox" data-block="b1"> Desempaquetado eficiente de valores en variables locales descriptivas.</label></li>
-              <li><label><input type="checkbox" data-block="b1"> Deduplicacion automatizada con <code>set()</code> y posterior reconversion a formato secuencial.</label></li>
-              <li><label><input type="checkbox" data-block="b1"> Ciclo de vida de entradas en diccionarios: creacion, actualizacion y borrado.</label></li>
-              <li><label><input type="checkbox" data-block="b1"> Recorrido exhaustivo de diccionarios empleando el metodo <code>.items()</code>.</label></li>
-              <li><label><input type="checkbox" data-block="b1"> Acceso defensivo con <code>.get()</code> para la gestion de claves inexistentes.</label></li>
-              <li><label><input type="checkbox" data-block="b1"> Validacion de claves mediante <code>in</code> y distincion tecnica frente a la busqueda en valores.</label></li>
-              <li><label><input type="checkbox" data-block="b1"> Implementacion de diccionarios de listas para el modelado de datos complejos.</label></li>
-              <li><label><input type="checkbox" data-block="b1"> Construccion y procesamiento de diccionarios anidados en multiples niveles.</label></li>
-              <li><label><input type="checkbox" data-block="b1"> Criterio de seleccion estructural justificado ante nuevos requerimientos de datos.</label></li>
+            <ul class="cl-list">
+              <li><label><input type="checkbox"> Configurar instalación de Python y entorno de ejecución.</label></li>
+              <li><label><input type="checkbox"> Escribir la función <code>print()</code> y el clásico "Hola Mundo".</label></li>
+              <li><label><input type="checkbox"> Declarar variables y diferenciar tipos de datos primitivos.</label></li>
+              <li><label><input type="checkbox"> Capturar datos interactivos de usuario con <code>input()</code>.</label></li>
+              <li><label><input type="checkbox"> Realizar dibujos y trazos iniciales usando Turtle.</label></li>
             </ul>
           </div>
 
-          <div class="cl-block">
+          <!-- Bloque 3 -->
+          <div class="cl-block" id="block-b3">
             <div class="cl-block-header">
-              <span class="cl-block-title">Bloque 2 — Persistencia y Archivos</span>
-              <span class="cl-block-count" id="count-b2">0 / 14</span>
+              <span class="cl-block-title">Fase 3: Programación Visual & py5</span>
+              <span class="cl-block-count" id="count-b3">0 / 5</span>
             </div>
-            <ul class="cl-list" id="block-b2">
-              <li><label><input type="checkbox" data-block="b2"> Apertura de flujos con <code>with open(...)</code> y justificacion del cierre automatizado.</label></li>
-              <li><label><input type="checkbox" data-block="b2"> Aplicacion de <code>encoding='utf-8'</code> para garantizar la integridad de caracteres especiales.</label></li>
-              <li><label><input type="checkbox" data-block="b2"> Procesamiento eficiente de archivos mediante iteracion linea por linea.</label></li>
-              <li><label><input type="checkbox" data-block="b2"> Conversion de tipos de datos en la entrada para su procesamiento numerico.</label></li>
-              <li><label><input type="checkbox" data-block="b2"> Diferenciacion tecnica de modos de acceso: <code>'r'</code>, <code>'w'</code> y <code>'a'</code>.</label></li>
-              <li><label><input type="checkbox" data-block="b2"> Generacion programatica de archivos de texto con contenido estructurado.</label></li>
-              <li><label><input type="checkbox" data-block="b2"> Construccion de rutas portables compatibles con multiples sistemas operativos.</label></li>
-              <li><label><input type="checkbox" data-block="b2"> Formateo avanzado con f-strings: especificadores numericos y de alineacion.</label></li>
-              <li><label><input type="checkbox" data-block="b2"> Evaluacion de las limitaciones de la concatenacion tradicional en la creacion de reportes.</label></li>
-              <li><label><input type="checkbox" data-block="b2"> Lectura robusta de archivos CSV y acceso nominal a campos con <code>csv.DictReader</code>.</label></li>
-              <li><label><input type="checkbox" data-block="b2"> Serializacion y recuperacion integra de estructuras de datos en formato JSON.</label></li>
-              <li><label><input type="checkbox" data-block="b2"> Criterio de seleccion del formato de almacenamiento segun el requerimiento tecnico.</label></li>
-              <li><label><input type="checkbox" data-block="b2"> Generacion de documentos HTML y graficos SVG mediante inyeccion de codigo.</label></li>
-              <li><label><input type="checkbox" data-block="b2"> Implementacion de logica de exclusion y reporte ante registros corruptos o inconsistentes.</label></li>
+            <ul class="cl-list">
+              <li><label><input type="checkbox"> Dominar el plano cartesiano y coordenadas en pantalla.</label></li>
+              <li><label><input type="checkbox"> Implementar estructuras condicionales <code>if</code> / <code>else</code>.</label></li>
+              <li><label><input type="checkbox"> Automatizar repeticiones mediante bucles <code>for</code>.</label></li>
+              <li><label><input type="checkbox"> Controlar iteraciones condicionales con bucles <code>while</code>.</label></li>
+              <li><label><input type="checkbox"> Crear funciones modulares con parámetros y retornos.</label></li>
             </ul>
           </div>
 
-          <div class="cl-block">
+          <!-- Bloque 4 -->
+          <div class="cl-block" id="block-b4">
             <div class="cl-block-header">
-              <span class="cl-block-title">Bloque 3 — Automatizacion de Procesos</span>
-              <span class="cl-block-count" id="count-b3">0 / 12</span>
+              <span class="cl-block-title">Fase 4: Problemas Reales & Archivos</span>
+              <span class="cl-block-count" id="count-b4">0 / 5</span>
             </div>
-            <ul class="cl-list" id="block-b3">
-              <li><label><input type="checkbox" data-block="b3"> Inspeccion sistematica de directorios con <code>os.listdir()</code> o <code>pathlib</code>.</label></li>
-              <li><label><input type="checkbox" data-block="b3"> Filtrado de ficheros del sistema y elementos irrelevantes sin errores de deteccion.</label></li>
-              <li><label><input type="checkbox" data-block="b3"> Validacion preventiva de existencia y tipo de entidad antes de la manipulacion.</label></li>
-              <li><label><input type="checkbox" data-block="b3"> Creacion resiliente de jerarquias de carpetas evitando conflictos de redundancia.</label></li>
-              <li><label><input type="checkbox" data-block="b3"> Descomposicion de metadatos de archivos (nomenclatura y extension).</label></li>
-              <li><label><input type="checkbox" data-block="b3"> Localizacion de entidades mediante patrones de busqueda con <code>glob</code>.</label></li>
-              <li><label><input type="checkbox" data-block="b3"> Aplicacion del ciclo operativo: listar → filtrar → recorrer → ejecutar → reportar.</label></li>
-              <li><label><input type="checkbox" data-block="b3"> Validacion unitaria de funciones antes del despliegue en procesamiento masivo.</label></li>
-              <li><label><input type="checkbox" data-block="b3"> Implementacion mandatoria de trazas de simulacion sin impacto en el sistema.</label></li>
-              <li><label><input type="checkbox" data-block="b3"> Gestion segura de persistencia evitando sobreescrituras accidentales.</label></li>
-              <li><label><input type="checkbox" data-block="b3"> Generacion dinamica de nombres de salida mediante marcas temporales.</label></li>
-              <li><label><input type="checkbox" data-block="b3"> Produccion de bitacoras de actividad acumulativas para el seguimiento de procesos.</label></li>
+            <ul class="cl-list">
+              <li><label><input type="checkbox"> Manipular listas y métodos avanzados de ordenamiento.</label></li>
+              <li><label><input type="checkbox"> Estructurar información clave usando diccionarios.</label></li>
+              <li><label><input type="checkbox"> Abrir y leer ficheros de texto locales en Python.</label></li>
+              <li><label><input type="checkbox"> Escribir y actualizar registros en archivos locales.</label></li>
+              <li><label><input type="checkbox"> Automatizar una tarea repetitiva cotidiana con scripts.</label></li>
             </ul>
           </div>
 
-          <div class="cl-block">
+          <!-- Bloque 5 -->
+          <div class="cl-block" id="block-b5">
             <div class="cl-block-header">
-              <span class="cl-block-title">Bloque 4 — Modularidad y Organizacion</span>
-              <span class="cl-block-count" id="count-b4">0 / 13</span>
+              <span class="cl-block-title">Fase 5: Desarrollo Web (Django)</span>
+              <span class="cl-block-count" id="count-b5">0 / 5</span>
             </div>
-            <ul class="cl-list" id="block-b4">
-              <li><label><input type="checkbox" data-block="b4"> Identificacion de redundancias y refactorizacion hacia estructuras funcionales.</label></li>
-              <li><label><input type="checkbox" data-block="b4"> Definicion de bloques con responsabilidad unica empleando parametros y <code>return</code>.</label></li>
-              <li><label><input type="checkbox" data-block="b4"> Encapsulacion de dependencias y constantes dentro del ambito funcional.</label></li>
-              <li><label><input type="checkbox" data-block="b4"> Aplicacion de semantica tecnica en la nomenclatura de funciones y variables.</label></li>
-              <li><label><input type="checkbox" data-block="b4"> Creacion y vinculacion de modulos <code>.py</code> personalizados.</label></li>
-              <li><label><input type="checkbox" data-block="b4"> Uso responsable de nombres cualificados y justificacion del descarte de <code>import *</code>.</label></li>
-              <li><label><input type="checkbox" data-block="b4"> Estandarizacion de constantes de modulo en formato de MAYUSCULAS.</label></li>
-              <li><label><input type="checkbox" data-block="b4"> Comprension del proposito de <code>__pycache__</code> y gestion de persistencia en memoria.</label></li>
-              <li><label><input type="checkbox" data-block="b4"> Arquitectura de proyecto basada en segregacion de codigo, datos y resultados.</label></li>
-              <li><label><input type="checkbox" data-block="b4"> Division funcional entre modulos de extraccion, procesamiento y salida.</label></li>
-              <li><label><input type="checkbox" data-block="b4"> Implementacion y justificacion tecnica del punto de entrada <code>if __name__ == "__main__":</code>.</label></li>
-              <li><label><input type="checkbox" data-block="b4"> Documentacion interna mediante docstrings bajo el estandar PEP 257.</label></li>
-              <li><label><input type="checkbox" data-block="b4"> Produccion de documentacion README orientada a la ejecucion autonoma por terceros.</label></li>
+            <ul class="cl-list">
+              <li><label><input type="checkbox"> Comprender la arquitectura Modelo-Vista-Template (MVT).</label></li>
+              <li><label><input type="checkbox"> Configurar un proyecto base y una app en Django.</label></li>
+              <li><label><input type="checkbox"> Establecer enrutamiento de URLs y vistas funcionales.</label></li>
+              <li><label><input type="checkbox"> Definir modelos de datos con ORM y migraciones.</label></li>
+              <li><label><input type="checkbox"> Diseñar plantillas HTML con herencia y formularios.</label></li>
             </ul>
           </div>
 
-          <div class="cl-block">
+          <!-- Bloque 6 -->
+          <div class="cl-block" id="block-b6">
             <div class="cl-block-header">
-              <span class="cl-block-title">Bloque 5 — Integracion Final</span>
-              <span class="cl-block-count" id="count-b5">0 / 7</span>
+              <span class="cl-block-title">Fase 6: Datos, APIs e Inteligencia Artificial</span>
+              <span class="cl-block-count" id="count-b6">0 / 5</span>
             </div>
-            <ul class="cl-list" id="block-b5">
-              <li><label><input type="checkbox" data-block="b5"> Ejecucion integra del sistema mediante una orden unica en consola.</label></li>
-              <li><label><input type="checkbox" data-block="b5"> Funcionamiento del software ante juegos de datos externos no controlados.</label></li>
-              <li><label><input type="checkbox" data-block="b5"> Resiliencia operativa ante ausencia de archivos o directorios vacios.</label></li>
-              <li><label><input type="checkbox" data-block="b5"> Validacion cruzada del proyecto basada exclusivamente en la documentacion entregada.</label></li>
-              <li><label><input type="checkbox" data-block="b5"> Sustentacion tecnica de la seleccion de arquitecturas de datos aplicadas.</label></li>
-              <li><label><input type="checkbox" data-block="b5"> Analisis critico de decisiones de diseno y alternativas descartadas.</label></li>
-              <li><label><input type="checkbox" data-block="b5"> Capacidad de transponer el conocimiento hacia la optimizacion de procesos profesionales reales.</label></li>
+            <ul class="cl-list">
+              <li><label><input type="checkbox"> Consumir servicios web REST externos con <code>requests</code>.</label></li>
+              <li><label><input type="checkbox"> Procesar y analizar estructuras de datos JSON.</label></li>
+              <li><label><input type="checkbox"> Introducción a librerías de análisis (Pandas / NumPy).</label></li>
+              <li><label><input type="checkbox"> Explorar modelos conceptuales de Machine Learning.</label></li>
+              <li><label><input type="checkbox"> Desplegar un proyecto colaborativo en GitHub/Vercel.</label></li>
             </ul>
           </div>
-
         </div>
       </section>
 
-      <!-- PLAYGROUND -->
+      <!-- PLAYGROUND PYTHON -->
       <section id="playground" class="reveal">
-        <h2>Playground Python</h2>
-        <p class="section-desc">Motor Python corriendo 100% en tu navegador via Pyodide (WebAssembly). Sin backend ni instalacion. <kbd>Ctrl+Enter</kbd> para ejecutar.</p>
+        <h2>Playground Python (Navegador)</h2>
+        <p class="section-desc">Escribe y ejecuta código Python en tiempo real sin instalar nada en tu equipo gracias a Pyodide.</p>
         <div class="playground-area">
-          <div class="playground-schema">
-            <strong>Estructuras precargadas para practicar:</strong>
-            <pre><code>frutas = ["manzana", "naranja", "pera", "uva"]
-numeros = [10, 25, 7, 42, 18, 3]
-gastos = {
-    "enero":   {"alimentacion": 450000, "transporte": 120000},
-    "febrero": {"alimentacion": 380000, "transporte":  95000},
-    "marzo":   {"alimentacion": 520000, "transporte": 140000}
-}
-for mes, cats in gastos.items():
-    t = sum(cats.values())
-    print(f"{mes.capitalize():10s}: $ {t:,}")</code></pre>
-          </div>
           <div class="playground-editor">
             <div class="editor-toolbar">
-              <span class="editor-label">Editor</span>
-              <button id="run-btn" class="run-btn">Ejecutar</button>
-              <button id="clear-btn" class="clear-btn">Limpiar</button>
+              <span class="editor-label">Editor Interactivo</span>
+              <button class="run-btn" id="run-btn">Ejecutar (Ctrl+Enter)</button>
+              <button class="clear-btn" id="clear-btn">Limpiar</button>
             </div>
-            <textarea id="py-editor" spellcheck="false" placeholder="# Escribe tu codigo Python aqui..."></textarea>
+            <textarea id="py-editor" spellcheck="false"></textarea>
           </div>
           <div class="playground-output">
-            <div class="output-label">Salida</div>
-            <div id="py-output" class="output-content"><span class="output-hint">La salida aparecera aqui. Carga inicial de Pyodide puede tardar unos segundos.</span></div>
+            <div class="output-label">Consola de Resultados</div>
+            <div id="py-output" class="output-content"><span class="output-hint">Esperando ejecución...</span></div>
           </div>
         </div>
       </section>
 
     </main>
 
+    <!-- FOOTER -->
     <footer class="site-footer">
       <div class="container">
-        <p>Hoja de Ruta Python · Colombia ·</p>
-        <p class="footer-note">2026 Derechos Reservados <code>#repos</code> de <code>index.html</code> y actualizar el estado de la fase correspondiente en <code>#ruta</code>.</p>
+        <p>Comunidad Python Colombia & Boyacá Dev — Formación abierta, inclusiva y colaborativa</p>
+        <p class="footer-note">Hoja de Ruta Nacional v.3.0 — Diseñada para el aprendizaje sin fricción técnica</p>
       </div>
     </footer>
 
-  </div><!-- /layout -->
+  </div>
 
   <script src="app.js"></script>
 </body>

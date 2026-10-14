@@ -17,26 +17,44 @@ function initSidebar() {
 
   if (!sidebar) return;
 
-  function openSidebar() {
+  function syncAria() {
+    var expanded = sidebar.classList.contains('is-open') ? 'true' : 'false';
+    if (fab)       fab.setAttribute('aria-expanded', expanded);
+    if (reopenBtn) reopenBtn.setAttribute('aria-expanded', expanded);
+  }
+
+  function openSidebar(moveFocus) {
     sidebar.classList.add('is-open');
     document.body.classList.add('sidebar-open');
     if (overlay)  overlay.classList.add('is-visible');
     if (reopenBtn) reopenBtn.classList.remove('is-visible');
+    syncAria();
+    if (moveFocus === true && closeBtn) closeBtn.focus();
   }
 
-  function closeSidebar() {
+  function closeSidebar(returnFocusTo) {
     sidebar.classList.remove('is-open');
     document.body.classList.remove('sidebar-open');
     if (overlay) overlay.classList.remove('is-visible');
     if (reopenBtn && window.innerWidth >= 900) {
       reopenBtn.classList.add('is-visible');
     }
+    syncAria();
+    if (returnFocusTo && returnFocusTo.focus) returnFocusTo.focus();
   }
 
-  if (closeBtn)  closeBtn.addEventListener('click', closeSidebar);
-  if (reopenBtn) reopenBtn.addEventListener('click', openSidebar);
-  if (fab)       fab.addEventListener('click', openSidebar);
-  if (overlay)   overlay.addEventListener('click', closeSidebar);
+  if (closeBtn)  closeBtn.addEventListener('click', function () {
+    closeSidebar(window.innerWidth < 900 ? fab : reopenBtn);
+  });
+  if (reopenBtn) reopenBtn.addEventListener('click', function () { openSidebar(true); });
+  if (fab)       fab.addEventListener('click', function () { openSidebar(true); });
+  if (overlay)   overlay.addEventListener('click', function () { closeSidebar(fab); });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && window.innerWidth < 900 && sidebar.classList.contains('is-open')) {
+      closeSidebar(fab);
+    }
+  });
 
   if (window.innerWidth >= 900) {
     openSidebar();
@@ -50,6 +68,7 @@ function initSidebar() {
       sidebar.classList.remove('is-open');
       document.body.classList.remove('sidebar-open');
       if (reopenBtn) reopenBtn.classList.remove('is-visible');
+      syncAria();
     }
   });
 

@@ -8,16 +8,18 @@
 </head>
 <body>
 
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
   <!-- BARRA DE PROGRESO DE LECTURA -->
   <div id="read-progress" role="progressbar" aria-label="Progreso de lectura"></div>
 
   <!-- BOTÓN FLOTANTE SIDEBAR (Móvil) -->
-  <button class="sidebar-fab" id="sidebar-fab" aria-label="Abrir menú de navegación">
+  <button class="sidebar-fab" id="sidebar-fab" aria-label="Abrir menú de navegación" aria-controls="sidebar" aria-expanded="false">
     <span class="fab-icon">&#9776;</span>
   </button>
 
   <!-- BOTÓN RE-ABRIR SIDEBAR (Desktop) -->
-  <button class="sidebar-reopen" id="sidebar-reopen" aria-label="Mostrar navegación">&#9776;</button>
+  <button class="sidebar-reopen" id="sidebar-reopen" aria-label="Mostrar navegación" aria-controls="sidebar" aria-expanded="false">&#9776;</button>
 
   <!-- OVERLAY MÓVIL -->
   <div class="sidebar-overlay" id="sidebar-overlay"></div>
@@ -28,7 +30,7 @@
       <span class="sidebar-brand">Python Colombia</span>
       <button class="sidebar-close" id="sidebar-close" aria-label="Cerrar menú">&#x2715;</button>
     </div>
-    <nav class="sidebar-nav">
+    <nav class="sidebar-nav" aria-label="Navegación de la hoja de ruta">
       <ul>
         <li><a href="#principios" class="sidebar-link" data-section="principios">Principios & Enfoque</a></li>
         <li><a href="#entorno" class="sidebar-link" data-section="entorno">Guía de Instalación</a></li>
@@ -81,7 +83,7 @@
       </div>
     </header>
 
-    <main class="container">
+    <main class="container" id="main" tabindex="-1">
 
       <!-- PRINCIPIOS DE LA RUTA -->
       <section id="principios" class="reveal">

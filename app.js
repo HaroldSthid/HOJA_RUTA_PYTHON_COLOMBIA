@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * HOJA DE RUTA PYTHON — COLOMBIA & BOYACÁ DEV
+ * HOJA DE RUTA PYTHON — COLOMBIA 
  * Script Principal v3.0 (Octubre 2026)
  */
 

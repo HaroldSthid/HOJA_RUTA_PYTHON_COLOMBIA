@@ -1,5 +1,13 @@
 'use strict';
 
+/**
+ * HOJA DE RUTA PYTHON — COLOMBIA & BOYACÁ DEV
+ * Script Principal v3.0 (Octubre 2026)
+ */
+
+/* =============================================
+   1. NAVEGACIÓN Y SIDEBAR ADAPTATIVO
+   ============================================= */
 function initSidebar() {
   var sidebar   = document.getElementById('sidebar');
   var fab       = document.getElementById('sidebar-fab');
@@ -52,6 +60,9 @@ function initSidebar() {
   });
 }
 
+/* =============================================
+   2. SCROLLSPY (SEGUIMIENTO DE SECCIONES)
+   ============================================= */
 function initScrollSpy() {
   if (!('IntersectionObserver' in window)) return;
   var links    = document.querySelectorAll('.sidebar-link[data-section]');
@@ -80,6 +91,9 @@ function initScrollSpy() {
   sections.forEach(function (s) { observer.observe(s.el); });
 }
 
+/* =============================================
+   3. ACORDEONES MÓDULOS DE FASES
+   ============================================= */
 function initModuleToggles() {
   document.querySelectorAll('.module-toggle').forEach(function (btn) {
     btn.addEventListener('click', function () {
@@ -99,7 +113,10 @@ function initModuleToggles() {
   });
 }
 
-var STORAGE_KEY  = 'py_ruta_checklist_v5';
+/* =============================================
+   4. CHECKLIST INTERACTIVO (+30 HITOS & PERSISTENCIA)
+   ============================================= */
+var STORAGE_KEY  = 'py_ruta_checklist_v8';
 var TOTAL        = 30;
 var BLOCK_TOTALS = { b1: 5, b2: 5, b3: 5, b4: 5, b5: 5, b6: 5 };
 
@@ -143,9 +160,9 @@ function refreshCounts() {
   var gEl = document.getElementById('cl-global-count');
   if (gEl) gEl.textContent = total + ' / ' + TOTAL + ' completados';
 
-  var pct  = Math.round((total / TOTAL) * 100);
-  var bar  = document.getElementById('sp-bar');
-  var cnt  = document.getElementById('sp-count');
+  var pct = Math.round((total / TOTAL) * 100);
+  var bar = document.getElementById('sp-bar');
+  var cnt = document.getElementById('sp-count');
   if (bar) bar.style.width = pct + '%';
   if (cnt) cnt.textContent = total + ' / ' + TOTAL;
 }
@@ -194,7 +211,7 @@ function initChecklist() {
   var resetBtn = document.getElementById('cl-reset');
   if (resetBtn) {
     resetBtn.addEventListener('click', function () {
-      if (!confirm('¿Reiniciar todo el checklist?')) return;
+      if (!confirm('¿Reiniciar todo el progreso guardado en el checklist?')) return;
       localStorage.removeItem(STORAGE_KEY);
       checkboxes.forEach(function (cb) { applyItem(cb, false); });
       refreshCounts();
@@ -202,13 +219,15 @@ function initChecklist() {
   }
 }
 
-/* Playground Pyodide */
+/* =============================================
+   5. PLAYGROUND INTERACTIVO CON PYODIDE
+   ============================================= */
 var pyodide        = null;
 var pyodideLoading = false;
 var pyodideReady   = false;
 var PYODIDE_CDN    = 'https://cdn.jsdelivr.net/pyodide/v0.27.5/full/pyodide.js';
 
-var STARTER = "print('¡Hola desde Python en el navegador!')\nfrutas = ['manzana', 'pera', 'uva']\nprint('Frutas:', frutas)";
+var STARTER = "# Código de prueba interactivo\nprint('¡Hola desde la Hoja de Ruta de Python Colombia!')\nfrutas = ['Manzana', 'Pera', 'Uva']\nfor fruta in frutas:\n    print(f'Procesando: {fruta}')";
 
 function setOut(text, isError) {
   var el = document.getElementById('py-output');
@@ -238,7 +257,7 @@ async function ensurePyodide() {
   if (pyodideReady)   return true;
   if (pyodideLoading) return false;
   pyodideLoading = true;
-  setOutHTML('<span class="output-loading">Cargando entorno Python...</span>');
+  setOutHTML('<span class="output-loading">Cargando intérprete de Python en el navegador...</span>');
 
   return new Promise(function (resolve) {
     loadPyScript(async function () {
@@ -247,11 +266,11 @@ async function ensurePyodide() {
         pyodide.runPython("import sys, io\n_buf = io.StringIO()\nsys.stdout = _buf\nsys.stderr = _buf\n");
         pyodideReady   = true;
         pyodideLoading = false;
-        setOutHTML('<span class="output-hint">Listo. Ctrl+Enter para ejecutar.</span>');
+        setOutHTML('<span class="output-hint">Entorno listo. Presiona Ctrl+Enter para ejecutar.</span>');
         resolve(true);
       } catch (err) {
         pyodideLoading = false;
-        setOut('Error al inicializar Pyodide.', true);
+        setOut('Error al cargar Pyodide.', true);
         resolve(false);
       }
     });
@@ -270,7 +289,7 @@ async function runPython() {
     pyodide.runPython("_buf.truncate(0); _buf.seek(0)");
     pyodide.runPython(code);
     var output = pyodide.runPython("_buf.getvalue()");
-    setOut(output || 'Ejecutado sin salida.', false);
+    setOut(output || 'Ejecutado correctamente (sin salida en consola).', false);
   } catch (err) {
     setOut(err.message || String(err), true);
   }
@@ -288,7 +307,7 @@ function initPlayground() {
   if (clearBtn) {
     clearBtn.addEventListener('click', function () {
       editor.value = '';
-      setOutHTML('');
+      setOutHTML('<span class="output-hint">Consola limpia.</span>');
     });
   }
 
@@ -300,6 +319,9 @@ function initPlayground() {
   });
 }
 
+/* =============================================
+   6. BARRA DE PROGRESO DE LECTURA Y REVEAL
+   ============================================= */
 function initReadProgress() {
   window.addEventListener('scroll', function () {
     var bar = document.getElementById('read-progress');
@@ -331,6 +353,9 @@ function initScrollReveal() {
   sections.forEach(function (sec) { observer.observe(sec); });
 }
 
+/* =============================================
+   INICIALIZACIÓN AL CARGAR EL DOM
+   ============================================= */
 document.addEventListener('DOMContentLoaded', function () {
   initSidebar();
   initScrollSpy();

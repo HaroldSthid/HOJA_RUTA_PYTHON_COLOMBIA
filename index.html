@@ -274,6 +274,35 @@
                   <tr><th>Objetivo</th><td>Manejar colecciones de datos complejos y persistencia en ficheros locales mediante VS Code.</td></tr>
                   <tr><th>Temas Clave</th><td>Listas, tuplas y métodos de ordenamiento · Diccionarios para estructurar llaves y valores · Apertura y gestión de archivos (<code>open()</code>, <code>with open</code>) · Automatización de tareas repetitivas en el sistema operativo.</td></tr>
                   <tr><th>Brief Proyecto Guía</th><td><strong>Sistema de Inventario Local:</strong> Aplicación de consola modular que permite registrar, editar, buscar y guardar un inventario de productos en un archivo de texto estructurado (CSV/JSON) para mantener datos entre sesiones.</td></tr>
+                  <tr><th>Enunciado</th><td>Una tienda pequeña anota sus productos en un cuaderno y pierde la cuenta de lo que tiene. Construye un programa de consola que guarde cada producto (nombre, cantidad y precio) en un archivo, para que los datos sigan ahí cuando cierres el programa.</td></tr>
+                  <tr><th>Requisitos mínimos</th><td>
+                    <ul>
+                      <li>Agregar un producto nuevo.</li>
+                      <li>Listar todos los productos con su cantidad y precio.</li>
+                      <li>Buscar un producto por nombre.</li>
+                      <li>Guardar los datos en un archivo al salir y cargarlos al iniciar.</li>
+                    </ul>
+                  </td></tr>
+                  <tr><th>Pasos sugeridos</th><td>
+                    <ol>
+                      <li>Representa un producto con un diccionario y guarda varios en una lista.</li>
+                      <li>Escribe una función para agregar y otra para listar.</li>
+                      <li>Agrega la búsqueda por nombre.</li>
+                      <li>Guarda la lista en un archivo con <code>with open</code> (una línea por producto, o CSV/JSON si ya los conoces).</li>
+                      <li>Al iniciar, lee el archivo y reconstruye la lista.</li>
+                      <li>Prueba con datos incorrectos (cantidad en texto, archivo que no existe) y muestra un mensaje claro.</li>
+                    </ol>
+                  </td></tr>
+                  <tr><th>Entregable</th><td>Un archivo <code>inventario.py</code> y un archivo de datos de ejemplo, subidos a tu repositorio de GitHub con un README corto que explique cómo ejecutarlo.</td></tr>
+                  <tr><th>Terminaste cuando…</th><td>
+                    <ul>
+                      <li>Puedes cerrar el programa, abrirlo de nuevo y ver tus productos.</li>
+                      <li>No se rompe si escribes algo inesperado.</li>
+                      <li>Alguien más puede ejecutarlo siguiendo tu README.</li>
+                    </ul>
+                  </td></tr>
+                  <tr><th>Si no programas aún</th><td>Haz el mismo inventario en una hoja de cálculo y dibuja en papel el diagrama de flujo de las acciones (agregar, listar, buscar, guardar). Escribe cómo se traduciría cada acción a una función. Así practicas la lógica antes de escribir código.</td></tr>
+                  <tr><th>Reto extra</th><td>Agrega borrar productos, un aviso de bajo inventario y exporta el reporte a CSV.</td></tr>
                   <tr><th>Recurso Clave</th><td><a href="https://docs.python.org/es/3/tutorial/inputoutput.html#reading-and-writing-files" target="_blank" rel="noopener">Guía Oficial de Lectura y Escritura de Archivos en Python 3</a>.</td></tr>
                 </tbody>
               </table>

@@ -209,6 +209,8 @@ section h2 { font-size: 1.5rem; margin-bottom: .6rem; }
 .table-responsive { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 1rem; }
 .ficha-table { width: 100%; min-width: 480px; border-collapse: collapse; font-size: .87rem; background: var(--bg-2); border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); }
 .ficha-table th, .ficha-table td { padding: .75rem 1rem; border: 1px solid var(--border-soft); vertical-align: top; text-align: left; }
+.ficha-table td ul, .ficha-table td ol { margin: 0; padding-left: 1.25rem; }
+.ficha-table td li + li { margin-top: .3rem; }
 .ficha-table th { width: 150px; font-weight: 600; background: var(--bg-3); color: var(--text-2); }
 
 /* Videos Grid & Reproductor Nativo Integrado */

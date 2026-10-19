@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hoja de Ruta Python — Python Colombia & Boyacá Dev</title>
+  <title>Hoja de Ruta Python — Python Colombia </title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
   <!-- BARRA DE PROGRESO DE LECTURA -->
-  <div id="read-progress"></div>
+  <div id="read-progress" role="progressbar" aria-label="Progreso de lectura"></div>
 
   <!-- BOTÓN FLOTANTE SIDEBAR (Móvil) -->
   <button class="sidebar-fab" id="sidebar-fab" aria-label="Abrir menú de navegación">
@@ -23,7 +23,7 @@
   <div class="sidebar-overlay" id="sidebar-overlay"></div>
 
   <!-- SIDEBAR DE NAVEGACIÓN -->
-  <aside class="sidebar" id="sidebar">
+  <aside class="sidebar" id="sidebar" aria-label="Navegación principal">
     <div class="sidebar-header">
       <span class="sidebar-brand">Python Colombia</span>
       <button class="sidebar-close" id="sidebar-close" aria-label="Cerrar menú">&#x2715;</button>
@@ -31,6 +31,7 @@
     <nav class="sidebar-nav">
       <ul>
         <li><a href="#principios" class="sidebar-link" data-section="principios">Principios & Enfoque</a></li>
+        <li><a href="#entorno" class="sidebar-link" data-section="entorno">Guía de Instalación</a></li>
         <li><a href="#ruta" class="sidebar-link" data-section="ruta">Ruta de Aprendizaje</a></li>
         <li>
           <a href="#fases" class="sidebar-link" data-section="fases">Fases Detalladas (1 al 6)</a>
@@ -109,6 +110,26 @@
         </div>
       </section>
 
+      <!-- GUÍA DE INSTALACIÓN Y ENTORNO -->
+      <section id="entorno" class="reveal">
+        <h2>Guía de Instalación y Entorno de Desarrollo</h2>
+        <p class="section-desc">Paso a paso para configurar tu entorno local o en la nube antes de comenzar a escribir código en Python 3.12+.</p>
+        <div class="principles-grid">
+          <div class="principle-card">
+            <h3>1. Instalación de Python 3.12+</h3>
+            <p>Descarga el instalador oficial desde <a href="https://www.python.org/downloads/" target="_blank" rel="noopener">python.org</a>. En Windows, asegúrate de marcar la casilla <strong>"Add Python.exe to PATH"</strong> al inicio.</p>
+          </div>
+          <div class="principle-card">
+            <h3>2. Editor Visual Studio Code</h3>
+            <p>Instala <a href="https://code.visualstudio.com/" target="_blank" rel="noopener">VS Code</a> y añade la extensión oficial de Python para autocompletado, resaltado de sintaxis y depuración integrada.</p>
+          </div>
+          <div class="principle-card">
+            <h3>3. Cuadernos en Google Colab</h3>
+            <p>Si no puedes instalar programas locales, utiliza <a href="https://colab.research.google.com/" target="_blank" rel="noopener">Google Colab</a> para ejecutar cuadernos interactivos en la nube directamente desde tu navegador.</p>
+          </div>
+        </div>
+      </section>
+
       <!-- RUTA DE APRENDIZAJE -->
       <section id="ruta" class="reveal">
         <h2>Ruta de Aprendizaje General</h2>
@@ -179,14 +200,16 @@
             <span class="module-chevron">+</span>
           </button>
           <div class="module-content" id="c-fase1" hidden>
-            <table class="ficha-table">
-              <tbody>
-                <tr><th>Objetivo</th><td>Entrenar la mente para estructurar soluciones lógicas antes de abrir un editor de código.</td></tr>
-                <tr><th>Temas Clave</th><td>Definición de algoritmo · Modelo computacional Entrada → Proceso → Salida · Algoritmos de la vida cotidiana (ej. recetas de cocina, instrucciones de ensamblaje) · Abstracción y descomposición de problemas complejos.</td></tr>
-                <tr><th>Recurso Clave</th><td>The Cartoon Guide to Computer Science – Larry Gonick.</td></tr>
-                <tr><th>Proyecto Guía</th><td>Diseñar en papel un diagrama de flujo para calcular el presupuesto mensual del hogar.</td></tr>
-              </tbody>
-            </table>
+            <div class="table-responsive">
+              <table class="ficha-table">
+                <tbody>
+                  <tr><th>Objetivo</th><td>Entrenar la mente para estructurar soluciones lógicas antes de abrir un editor de código.</td></tr>
+                  <tr><th>Temas Clave</th><td>Definición de algoritmo · Modelo computacional Entrada → Proceso → Salida · Algoritmos de la vida cotidiana · Abstracción y descomposición de problemas complejos.</td></tr>
+                  <tr><th>Recurso Clave</th><td><a href="https://ia801507.us.archive.org/24/items/TheCartoonGuideToComputerScience/LarryGonick-CartoonBookOnComputers.pdf" target="_blank" rel="noopener">The Cartoon Guide to Computer Science – Larry Gonick</a>.</td></tr>
+                  <tr><th>Proyecto Guía</th><td>Diseñar en papel un diagrama de flujo para calcular el presupuesto mensual del hogar.</td></tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
 
@@ -199,14 +222,17 @@
             <span class="module-chevron">+</span>
           </button>
           <div class="module-content" id="c-fase2" hidden>
-            <table class="ficha-table">
-              <tbody>
-                <tr><th>Objetivo</th><td>Conocer la sintaxis elemental de Python escribiendo programas sencillos en consola.</td></tr>
-                <tr><th>Temas Clave</th><td>Configuración de entornos e instalación de Python 3.12 · La función <code>print()</code> y cadenas de texto · Variables como contenedores de datos · Tipos primitivos: enteros (int), flotantes (float), cadenas (str) y booleanos (bool) · Lectura de datos por teclado con <code>input()</code> · Primeros pasos gráficos con Turtle.</td></tr>
-                <tr><th>Recurso Clave</th><td>Snake Wrangling for Kids – Jason R. Briggs.</td></tr>
-                <tr><th>Proyecto Guía</th><td>Calculadora interactiva de propinas y conversor de unidades monetarias por consola.</td></tr>
-              </tbody>
-            </table>
+            <div class="table-responsive">
+              <table class="ficha-table">
+                <tbody>
+                  <tr><th>Objetivo</th><td>Conocer la sintaxis elemental de Python escribiendo programas sencillos en consola.</td></tr>
+                  <tr><th>Temas Clave</th><td>Configuración de entornos e instalación de Python 3.12 · La función <code>print()</code> y cadenas de texto · Variables como contenedores de datos · Tipos primitivos: <code>int</code>, <code>float</code>, <code>str</code>, <code>bool</code> · Lectura con <code>input()</code> · Primeros pasos con Turtle.</td></tr>
+                  <tr><th>Práctica Colab</th><td><a href="https://colab.research.google.com/" target="_blank" rel="noopener" class="repo-link">Abrir Colab de Práctica Fase 2 ➔</a></td></tr>
+                  <tr><th>Recurso Clave</th><td><a href="https://docs.python.org/es/3/tutorial/" target="_blank" rel="noopener">Tutorial Oficial de Python 3 en Español</a>.</td></tr>
+                  <tr><th>Proyecto Guía</th><td>Calculadora interactiva de propinas y conversor de unidades monetarias por consola.</td></tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
 
@@ -219,14 +245,17 @@
             <span class="module-chevron">+</span>
           </button>
           <div class="module-content" id="c-fase3" hidden>
-            <table class="ficha-table">
-              <tbody>
-                <tr><th>Objetivo</th><td>Comprender la lógica de control visual mediante bocetos, coordenadas y animaciones interactivas.</td></tr>
-                <tr><th>Temas Clave</th><td>Sistema cartesiano en pantallas y píxeles · Estructuras de decisión condicional (<code>if</code>, <code>elif</code>, <code>else</code>) · Bucles iterativos controlados (<code>for</code> y <code>while</code>) · Modularización con funciones (<code>def</code>) y paso de parámetros · Entorno Google Colab + librería py5 (Processing en Python).</td></tr>
-                <tr><th>Recurso Clave</th><td>Learn Python Visually – Tristan Bunn.</td></tr>
-                <tr><th>Proyecto Guía</th><td>Generador de patrones geométricos aleatorios y un mini juego interactivo de dibujo en canvas.</td></tr>
-              </tbody>
-            </table>
+            <div class="table-responsive">
+              <table class="ficha-table">
+                <tbody>
+                  <tr><th>Objetivo</th><td>Comprender la lógica de control visual mediante bocetos, coordenadas y animaciones interactivas.</td></tr>
+                  <tr><th>Temas Clave</th><td>Sistema cartesiano en pantallas y píxeles · Estructuras condicionales (<code>if</code>, <code>elif</code>, <code>else</code>) · Bucles iterativos (<code>for</code> y <code>while</code>) · Modularización con funciones (<code>def</code>) · Entorno Google Colab + librería py5.</td></tr>
+                  <tr><th>Práctica Colab</th><td><a href="https://colab.research.google.com/" target="_blank" rel="noopener" class="repo-link">Abrir Colab de Práctica py5 Fase 3 ➔</a></td></tr>
+                  <tr><th>Recurso Clave</th><td><a href="https://edu.anarcho-copy.org/Programming%20Languages/Python/LearnPythonVisually.pdf" target="_blank" rel="noopener">Learn Python Visually – Tristan Bunn</a>.</td></tr>
+                  <tr><th>Proyecto Guía</th><td>Generador de patrones geométricos aleatorios y mini juego interactivo de dibujo en canvas.</td></tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
 
@@ -239,14 +268,16 @@
             <span class="module-chevron">+</span>
           </button>
           <div class="module-content" id="c-fase4" hidden>
-            <table class="ficha-table">
-              <tbody>
-                <tr><th>Objetivo</th><td>Manejar colecciones de datos complejos y persistencia en ficheros locales mediante VS Code.</td></tr>
-                <tr><th>Temas Clave</th><td>Listas, tuplas y métodos de ordenamiento · Diccionarios para estructurar llaves y valores · Apertura, lectura, actualización y cierre de archivos de texto (`open()`, `with open`) · Automatización de tareas repetitivas en el sistema operativo.</td></tr>
-                <tr><th>Recurso Clave</th><td>Head First Python – Paul Barry. Entorno local VS Code.</td></tr>
-                <tr><th>Proyecto Guía</th><td>Sistema de inventario local que lee y escribe registros estructurados en un archivo de texto.</td></tr>
-              </tbody>
-            </table>
+            <div class="table-responsive">
+              <table class="ficha-table">
+                <tbody>
+                  <tr><th>Objetivo</th><td>Manejar colecciones de datos complejos y persistencia en ficheros locales mediante VS Code.</td></tr>
+                  <tr><th>Temas Clave</th><td>Listas, tuplas y métodos de ordenamiento · Diccionarios para estructurar llaves y valores · Apertura y gestión de archivos (<code>open()</code>, <code>with open</code>) · Automatización de tareas repetitivas en el sistema operativo.</td></tr>
+                  <tr><th>Brief Proyecto Guía</th><td><strong>Sistema de Inventario Local:</strong> Aplicación de consola modular que permite registrar, editar, buscar y guardar un inventario de productos en un archivo de texto estructurado (CSV/JSON) para mantener datos entre sesiones.</td></tr>
+                  <tr><th>Recurso Clave</th><td><a href="https://docs.python.org/es/3/tutorial/inputoutput.html#reading-and-writing-files" target="_blank" rel="noopener">Guía Oficial de Lectura y Escritura de Archivos en Python 3</a>.</td></tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
 
@@ -259,14 +290,16 @@
             <span class="module-chevron">+</span>
           </button>
           <div class="module-content" id="c-fase5" hidden>
-            <table class="ficha-table">
-              <tbody>
-                <tr><th>Objetivo</th><td>Construir aplicaciones web robustas conectadas a bases de datos relacionales.</td></tr>
-                <tr><th>Temas Clave</th><td>Arquitectura Modelo-Vista-Template (MVT) · Configuración de proyectos y apps en Django · Enrutamiento de URLs y vistas basadas en funciones/clases · Sistema de modelos ORM y migraciones de bases de datos · Plantillas HTML con herencia y formularios seguros.</td></tr>
-                <tr><th>Recurso Clave</th><td>Documentación oficial de Django y tutoriales de la comunidad Python Colombia.</td></tr>
-                <tr><th>Proyecto Guía</th><td>Plataforma web de gestión de portafolios personales con panel de administración protegido.</td></tr>
-              </tbody>
-            </table>
+            <div class="table-responsive">
+              <table class="ficha-table">
+                <tbody>
+                  <tr><th>Objetivo</th><td>Construir aplicaciones web robustas conectadas a bases de datos relacionales.</td></tr>
+                  <tr><th>Temas Clave</th><td>Arquitectura Modelo-Vista-Template (MVT) · Configuración de proyectos y apps · Enrutamiento de URLs y vistas · Modelos ORM y migraciones · Plantillas HTML con herencia y formularios.</td></tr>
+                  <tr><th>Recurso Clave</th><td><a href="https://docs.djangoproject.com/es/stable/intro/tutorial01/" target="_blank" rel="noopener">Documentación y Tutorial Oficial de Django en Español</a>.</td></tr>
+                  <tr><th>Proyecto Guía</th><td>Plataforma web de gestión de portafolios personales con panel de administración protegido.</td></tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
 
@@ -279,14 +312,16 @@
             <span class="module-chevron">+</span>
           </button>
           <div class="module-content" id="c-fase6" hidden>
-            <table class="ficha-table">
-              <tbody>
-                <tr><th>Objetivo</th><td>Interactuar con servicios externos mediante APIs y explorar bases de análisis de datos e IA.</td></tr>
-                <tr><th>Temas Clave</th><td>Consumo de servicios web REST con la librería <code>requests</code> · Manejo de estructuras JSON · Introducción a librerías de manipulación de datos (Pandas / NumPy) · Primeros pasos conceptuales en modelos de Machine Learning y Visión Computacional.</td></tr>
-                <tr><th>Recurso Clave</th><td>Guías abiertas de APIs y repositorios de Boyacá Dev.</td></tr>
-                <tr><th>Proyecto Guía</th><td>Aplicación consultora de clima o tasas de cambio conectada a una API pública en tiempo real.</td></tr>
-              </tbody>
-            </table>
+            <div class="table-responsive">
+              <table class="ficha-table">
+                <tbody>
+                  <tr><th>Objetivo</th><td>Interactuar con servicios externos mediante APIs y explorar bases de análisis de datos e IA.</td></tr>
+                  <tr><th>Temas Clave</th><td>Consumo de servicios web REST externos con <code>requests</code> · Manejo de datos JSON · Análisis básico con Pandas / NumPy · Introducción conceptual a Machine Learning y Visión Computacional.</td></tr>
+                  <tr><th>Recursos Clave</th><td><a href="https://requests.readthedocs.io/en/latest/" target="_blank" rel="noopener">Documentación de Requests</a> | <a href="https://pandas.pydata.org/docs/user_guide/index.html" target="_blank" rel="noopener">Guía de Usuario Pandas</a>.</td></tr>
+                  <tr><th>Proyecto Guía</th><td>Aplicación consultora de clima o tasas de cambio conectada a una API pública en tiempo real.</td></tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </section>
@@ -310,7 +345,7 @@
           </div>
           <div class="principle-card">
             <h3>4. Comparte y pregunta en comunidad</h3>
-            <p>Ningún programador profesional trabaja aislado. Apóyate en los canales de Python Colombia y Boyacá Dev para resolver bloqueos técnicos.</p>
+            <p>Ningún programador profesional trabaja aislado. Apóyate en los canales comunitarios para resolver bloqueos técnicos.</p>
           </div>
         </div>
       </section>
@@ -326,7 +361,7 @@
           </div>
           <div class="principle-card">
             <h3>IndentationError</h3>
-            <p><strong>Causa:</strong> Mal uso o mezcla de espacios y tabulaciones en la sangría del bloque de código.<br><em>Solución:</em> Usa siempre 4 espacios uniformes.</p>
+            <p><strong>Causa:</strong> Mal uso o mezcla de espacios y tabulaciones en la sangría del bloque de código.<br><em>Solución:</em> Usa siempre 4 espacios uniformes por nivel.</p>
           </div>
           <div class="principle-card">
             <h3>NameError</h3>
@@ -334,7 +369,7 @@
           </div>
           <div class="principle-card">
             <h3>TypeError</h3>
-            <p><strong>Causa:</strong> Operación entre tipos incompatibles (ej. sumar un texto con un número entero sin convertirlo).<br><em>Solución:</em> Usa <code>str()</code> o <code>int()</code>.</p>
+            <p><strong>Causa:</strong> Operación entre tipos incompatibles (ej. sumar un texto con un número entero sin convertirlo).<br><em>Solución:</em> Usa <code>str()</code> o <code>int()</code> para moldear datos.</p>
           </div>
         </div>
       </section>
@@ -349,57 +384,57 @@
             <p>
               <code>pwd</code> — Muestra la ruta actual.<br>
               <code>ls</code> / <code>dir</code> — Lista archivos y carpetas.<br>
-              <code>cd nombre_carpeta</code> — Entra a un directorio.<br>
-              <code>mkdir nueva_carpeta</code> — Crea un directorio.
+              <code>cd carpeta</code> — Entra a un directorio.<br>
+              <code>mkdir nueva</code> — Crea un directorio.
             </p>
           </div>
           <div class="principle-card">
             <h3>Control de Versiones (Git Básico)</h3>
             <p>
-              <code>git init</code> — Inicializa un repositorio local.<br>
+              <code>git init</code> — Inicializa repositorio local.<br>
               <code>git status</code> — Muestra archivos modificados.<br>
-              <code>git add .</code> — Prepara los cambios para guardar.<br>
-              <code>git commit -m "mensaje"</code> — Guarda la versión local.
+              <code>git add .</code> — Prepara cambios para guardar.<br>
+              <code>git commit -m "msg"</code> — Guarda versión local.
             </p>
           </div>
           <div class="principle-card">
             <h3>Sincronización Remota (GitHub)</h3>
             <p>
               <code>git remote add origin URL</code> — Conecta con remoto.<br>
-              <code>git push -u origin main</code> — Sube los cambios principales.<br>
+              <code>git push -u origin main</code> — Sube la rama principal.<br>
               <code>git pull</code> — Descarga actualizaciones del servidor.
             </p>
           </div>
         </div>
       </section>
 
-      <!-- VIDEOS EXPLICATIVOS CON ENLACES EDITABLES -->
+      <!-- VIDEOS EXPLICATIVOS CON REPRODUCTOR NATIVO -->
       <section id="videos" class="reveal video-section">
         <h2>Videos Explicativos y Clases Grabadas</h2>
-        <p class="section-desc">Material audiovisual recomendado por la comunidad. Haz clic en los botones para abrir los enlaces.</p>
+        <p class="section-desc">Material audiovisual recomendado por la comunidad. Reproduce las clases directamente en las tarjetas con controles integrados.</p>
         <div class="videos-grid">
           <div class="video-card">
-            <div class="video-placeholder">
-              <span class="video-icon">&#9654;</span>
-              <span>Video 1</span>
+            <div class="video-container">
+              <video controls preload="metadata" aria-label="Vídeo de Fundamentos de Deep Learning">
+                <source src="short-tema2-final.mp4" type="video/mp4">
+                Tu navegador no soporta la reproducción de video HTML5.
+              </video>
             </div>
             <div class="video-info">
               <h3>Fundamentos de Deep Learning</h3>
               <p>Introducción conceptual aplicada a la visión computacional y modelos base explicados por expertos.</p>
-              <br>
-              <a href="short-tema2-final.mp4" target="_blank" rel="noopener" class="repo-link">Ver Vídeo en Explicativo</a>
             </div>
           </div>
           <div class="video-card">
-            <div class="video-placeholder">
-              <span class="video-icon">&#9654;</span>
-              <span>Video 2</span>
+            <div class="video-container">
+              <video controls preload="metadata" aria-label="Vídeo de Fundamentos de Computer Vision">
+                <source src="short-tema3-final.mp4" type="video/mp4">
+                Tu navegador no soporta la reproducción de video HTML5.
+              </video>
             </div>
             <div class="video-info">
               <h3>Fundamentos de Computer Vision</h3>
               <p>Procesamiento de imágenes, matrices y reconocimiento de patrones utilizando Python y OpenCV.</p>
-              <br>
-              <a href="short-tema3-final.mp4" target="_blank" rel="noopener" class="repo-link">Ver Vídeo Explicativo</a>
             </div>
           </div>
         </div>
@@ -408,23 +443,19 @@
       <!-- ENLACES Y RECURSOS -->
       <section id="enlaces" class="reveal">
         <h2>Enlaces y Recursos Abiertos</h2>
-        <p class="section-desc">Todos los enlaces, herramientas, libros y repositorios compartidos en las mesas de trabajo de la comunidad.</p>
-        <div class="resources-grid" style="display:grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.25rem;">
+        <p class="section-desc">Todos los enlaces, herramientas, libros y repositorios compartidos en las mesas de trabajo comunitarias.</p>
+        <div class="resources-grid">
           <div class="principle-card">
             <h3>Roadmap Oficial Python</h3>
-            <p><a href="https://roadmap.sh/python" target="_blank" rel="noopener">roadmap.sh/python</a><br><small>Guía de referencia global de tecnologías.</small></p>
+            <p><a href="https://roadmap.sh/python" target="_blank" rel="noopener">roadmap.sh/python</a><br><small>Guía global de referencia tecnológica.</small></p>
           </div>
           <div class="principle-card">
-            <h3>Domador de Serpientes</h3>
-            <p><a href="https://theswissbay.ch/pdf/Gentoomen%20Library/Programming/Python/Snake%20Wrangling%20for%20Kids%20-%20Learning%20to%20Program%20with%20Python%202%2C%20win-v0.7.2%20%282007%29.pdf" target="_blank" rel="noopener">Snake Wrangling for Kids (PDF)</a><br><small>Libro infantil clásico de iniciación.</small></p>
+            <h3>Tutorial Oficial Python 3</h3>
+            <p><a href="https://docs.python.org/es/3/tutorial/" target="_blank" rel="noopener">docs.python.org/es/3/tutorial/</a><br><small>Documentación oficial en español.</small></p>
           </div>
           <div class="principle-card">
             <h3>Learn Python Visually</h3>
-            <p><a href="https://edu.anarcho-copy.org/Programming%20Languages/Python/LearnPythonVisually.pdf" target="_blank" rel="noopener">Learn Python Visually (PDF)</a><br><small>Guía gráfica excelente con Processing/py5.</small></p>
-          </div>
-          <div class="principle-card">
-            <h3>Head First Python</h3>
-            <p><a href="https://theswissbay.ch/pdf/Gentoomen%20Library/Programming/Python/Head%20First%20Python%2C%20First%20Edition%20%282010%29.pdf" target="_blank" rel="noopener">Head First Python (PDF)</a><br><small>Edición inicial ideal para conceptos de datos.</small></p>
+            <p><a href="https://edu.anarcho-copy.org/Programming%20Languages/Python/LearnPythonVisually.pdf" target="_blank" rel="noopener">Learn Python Visually (PDF)</a><br><small>Guía gráfica con Processing/py5.</small></p>
           </div>
           <div class="principle-card">
             <h3>Cartoon Guide to CS</h3>
@@ -432,7 +463,7 @@
           </div>
           <div class="principle-card">
             <h3>Libros Gratis Programación</h3>
-            <p><a href="https://github.com/midudev/libros-programacion-gratis" target="_blank" rel="noopener">Repositorio Midudev GitHub</a><br><small>Gran repertorio de literatura tech gratuita.</small></p>
+            <p><a href="https://github.com/midudev/libros-programacion-gratis" target="_blank" rel="noopener">Repositorio Midudev GitHub</a><br><small>Repertorio abierto de literatura tech.</small></p>
           </div>
           <div class="principle-card">
             <h3>AvanzaTec MinTIC</h3>
@@ -440,7 +471,7 @@
           </div>
           <div class="principle-card">
             <h3>Learn Git Branching</h3>
-            <p><a href="https://learngitbranching.js.org/?locale=es_AR" target="_blank" rel="noopener">learngitbranching.js.org</a><br><small>Entorno interactivo para dominar ramas de Git.</small></p>
+            <p><a href="https://learngitbranching.js.org/?locale=es_AR" target="_blank" rel="noopener">learngitbranching.js.org</a><br><small>Entorno interactivo para dominar ramas en Git.</small></p>
           </div>
         </div>
       </section>
@@ -448,7 +479,7 @@
       <!-- PREGUNTAS FRECUENTES (FAQ) -->
       <section id="faq" class="reveal">
         <h2>Preguntas Frecuentes (FAQ)</h2>
-        <p class="section-desc">Respuestas rápidas a las dudas comunes de quienes inician en la comunidad.</p>
+        <p class="section-desc">Respuestas rápidas y enlaces comunitarios de acción directa.</p>
         <div class="principles-grid">
           <div class="principle-card">
             <h3>¿Necesito saber matemáticas avanzadas?</h3>
@@ -456,11 +487,11 @@
           </div>
           <div class="principle-card">
             <h3>¿Qué computador necesito?</h3>
-            <p>Cualquier equipo actual (incluso de gama baja o con 4GB de RAM) que tenga acceso a un navegador web e internet es suficiente gracias a herramientas como Google Colab.</p>
+            <p>Cualquier equipo que ejecute un navegador e internet es suficiente gracias a <a href="https://colab.research.google.com/" target="_blank" rel="noopener">Google Colab</a>.</p>
           </div>
           <div class="principle-card">
-            <h3>¿Cómo participo en los encuentros?</h3>
-            <p>La comunidad organiza sesiones abiertas a través de Python Colombia y Boyacá Dev con reuniones periódicas y mentorías colaborativas.</p>
+            <h3>¿Cómo participo en los encuentros comunitarios?</h3>
+            <p>Súmate a las sesiones abiertas a través de las comunidades organizadoras en <a href="https://github.com/ivangomezgb/HOJA_RUTA_PYTHON_COLOMBIA" target="_blank" rel="noopener">GitHub</a> y redes locales.</p>
           </div>
         </div>
       </section>
@@ -577,11 +608,11 @@
               <button class="run-btn" id="run-btn">Ejecutar (Ctrl+Enter)</button>
               <button class="clear-btn" id="clear-btn">Limpiar</button>
             </div>
-            <textarea id="py-editor" spellcheck="false"></textarea>
+            <textarea id="py-editor" spellcheck="false" aria-label="Editor de código Python"></textarea>
           </div>
           <div class="playground-output">
             <div class="output-label">Consola de Resultados</div>
-            <div id="py-output" class="output-content"><span class="output-hint">Esperando ejecución...</span></div>
+            <div id="py-output" class="output-content" aria-live="polite"><span class="output-hint">Esperando ejecución...</span></div>
           </div>
         </div>
       </section>
@@ -591,8 +622,8 @@
     <!-- FOOTER -->
     <footer class="site-footer">
       <div class="container">
-        <p>Comunidad Python Colombia & Boyacá Dev — Formación abierta, inclusiva y colaborativa</p>
-        <p class="footer-note">Hoja de Ruta Nacional v.3.0 — Diseñada para el aprendizaje sin fricción técnica</p>
+        <p>Desarrollado comunitariamente por <strong>Python Colombia</strong> · Licencia MIT</p>
+        <p class="footer-note">Hoja de Ruta Nacional v3.0 (Octubre 2026) · <a href="https://github.com/ivangomezgb/HOJA_RUTA_PYTHON_COLOMBIA" target="_blank" rel="noopener">Ver Repositorio y README en GitHub</a></p>
       </div>
     </footer>
 
